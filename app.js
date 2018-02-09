@@ -38,7 +38,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', home.view);
+app.get('/', index.view);
 app.get('/tab/', tab.viewTab);
 app.get('/karaoke', karaoke.view)
 app.get('/lyrics', lyrics.view)
