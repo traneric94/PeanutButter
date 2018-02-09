@@ -1,0 +1,25 @@
+{
+  "name": "PeanutButter",
+  "version": "1.0.0",
+  "description": "Peanut Butter ====",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^3.21.2",
+    "nodemon": "^1.14.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/traneric94/PeanutButter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/traneric94/PeanutButter/issues"
+  },
+  "homepage": "https://github.com/traneric94/PeanutButter#readme"
+}

@@ -11,6 +11,5 @@ pids
 logs
 results
 package-lock.json
-package.json
 npm-debug.log
 node_modules
