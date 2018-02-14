@@ -6,73 +6,124 @@
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/peanutButter.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+	<script>
+		function renderInfo(element_id) {
 
+			var elements = document.getElementsByClassName('navLink');
+			for (var i = 0, length = elements.length; i < length; i++) {
+				elements[i].style.display = 'none';
+			}
+			$(element_id).show();
+		}
+	</script>
 </head>
+
 <body>
 
-	<div class="container">
-	<h1>Peanut Butter Homepage</h1>
+	<div class="navLink" id='homeContent'>
+		<!--Search bar -->
+		<div class="container">
+			<div class="row">
+	        <div class="col-sm-6 col-sm-offset-3">
+	            <div id="imaginary_container">
+	                <div class="input-group stylish-input-group">
+	                    <input type="text" class="form-control"  placeholder="Search" >
+	                    <span class="input-group-addon">
+	                        <button type="submit">
+	                            <span class="glyphicon glyphicon-search"></span>
+	                        </button>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+		  </div>
+	  </div>
+
+		<!--Recent bar-->
+	  <div class="container">
+			<h2>Recent Searches...</h2>
+		</div>
+		<!--Collapseable menu 1 -->
+		<div class="container" >
+			<h3>Hips Don't Lie - Shakira</h3>
+			<h4>Oral Fixation</h4>
+			<ul>
+				<li><a href="/karaoke">Karaoke</a></li>
+				<li><a href="/lyrics">Lyrics</a></li>
+				<li><a href="/chords">Chords</a></li>
+				<li><a href="/songInfo">Song Information</a></li>
+				<li><a href="/favorites">Favorites</a></li>
+			</ul>
+	  </div>
+
+		<!--Collapseable menu 2 -->
+		<div class="container">
+			<h3>Creep - Radiohead</h3>
+			<h4>Pablo Honey</h4>
+			<ul>
+				<li><a href="/karaoke">Karaoke</a></li>
+				<li><a href="/lyrics">Lyrics</a></li>
+				<li><a href="/chords">Chords</a></li>
+				<li><a href="/songInfo">Song Information</a></li>
+				<li><a href="/favorites">Favorites</a></li>
+			</ul>
+		</div>
+
+	  <div class="container">
+			<h4>Currently Playing:</h4>
+		</div>
 	</div>
-	<!--Search bar -->
-	<div class="container">
-	<div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <div id="imaginary_container">
-                <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
+  <div class="navLink" id='karaokeContent' style="display: none;">
+		<h1>Karaoke </h1>
+		<iframe id="videoPlayer" width="854" height="480"
+    	src="https://www.youtube.com/embed/J3_DL0q9oq4" frameborder="0"
+    	allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+		<script>
+    var tag = document.createElement("Script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("Script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('videoPlayer', {
+        	events : {
+        		"onReady" : readyToPlay
+        	}
+        });
+    }
+
+    function readyToPlay(event) {
+    	event.target.playVideo
+    }
+
+    </script>
 	</div>
-  </div>
-	<!--Recent bar-->
-  <div class="container">
-		<h2>Recent Searches...</h2>
+	<div class="navLink" id='lyricsContent' style="display: none;">
+		<h1>Lyrics</h1>
 	</div>
-	<!--Collapseable menu 1 -->
-	<div class="container">
-		<h3>Hips Don't Lie - Shakira</h3>
-		<h4>Oral Fixation</h4>
-		<ul>
-			<li><a href="/karaoke">Karaoke</a></li>
-			<li><a href="/lyrics">Lyrics</a></li>
-			<li><a href="/chords">Chords</a></li>
-			<li><a href="/songInfo">Song Information</a></li>
-			<li><a href="/favorites">Favorites</a></li>
-		</ul>
-  </div>
-	<!--Collapseable menu 2 -->
-	<div class="container">
-		<h3>Creep - Radiohead</h3>
-		<h4>Pablo Honey</h4>
-		<ul>
-			<li><a href="/karaoke">Karaoke</a></li>
-			<li><a href="/lyrics">Lyrics</a></li>
-			<li><a href="/chords">Chords</a></li>
-			<li><a href="/songInfo">Song Information</a></li>
-			<li><a href="/favorites">Favorites</a></li>
-		</ul>
+	<div class="navLink" id='chordsContent' style="display: none;"><h1>Chords</h1></div>
+	<div class="navLink" id='infoContent' style="display: none;">
+		<h1>Song Information</h1>
+	</div>
+	<div class="navLink" id='favoriteContent' style="display: none;">
+		<h1>Favorites</h1>
 	</div>
 
+	  <!-- Navigation bar -->
   <div class="container">
-		<h4>Currently Playing:</h4>
-		<p>Smells like Teen Spirit</p>
-	</div>
-  <div class="container">
-  <!-- Navigation bar -->
   	<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/karaoke">Karaoke</a></li>
-			<li><a href="/lyrics">Lyrics</a></li>
-			<li><a href="/chords">Chords</a></li>
-			<li><a href="/songInfo">Song Information</a></li>
-			<li><a href="/favorites">Favorites</a></li>
+			<li class="active"><a href="#" onclick="renderInfo('#homeContent');">Home</a></li>
+			<li><a href="#" onclick="renderInfo('#karaokeContent');">Karaoke</a></li>
+			<li><a href="#" onclick="renderInfo('#lyricsContent');">Lyrics</a></li>
+			<li><a href="#" onclick="renderInfo('#chordsContent');">Chords</a></li>
+			<li><a href="#" onclick="renderInfo('#infoContent');">Song Information</a></li>
+			<li><a href="#" onclick="renderInfo('#favoriteContent');">Favorites</a></li>
 		</ul>
   </div>
+
+
 </body>
 </html>
