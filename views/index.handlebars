@@ -1,0 +1,141 @@
+<html>
+<head>
+	<title>Peanut Butter</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/peanutButter.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.nav a').click(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+
+				$('.navLink').hide();
+				$($(this).attr('data-element')).show();
+
+				return false;
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="navLink" id='homeContent'>
+		<!--Search bar -->
+		<div class="container">
+			<div class="row">
+	        <div class="col-sm-6 col-sm-offset-3">
+	            <div id="imaginary_container">
+	                <div class="input-group stylish-input-group">
+	                    <input type="text" class="form-control"  placeholder="Search" >
+	                    <span class="input-group-addon">
+	                        <button type="submit">
+	                            <span class="glyphicon glyphicon-search"></span>
+	                        </button>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+		  </div>
+	  </div>
+
+		<!--Recent bar-->
+	  <div class="container">
+			<h2>Recent Searches...</h2>
+		</div>
+		<!--Collapseable menu 1 -->
+		<div class="container" >
+			<h3>Hips Don't Lie - Shakira</h3>
+			<h4>Oral Fixation</h4>
+			<ul>
+				<li><a href="/karaoke">Karaoke</a></li>
+				<li><a href="/lyrics">Lyrics</a></li>
+				<li><a href="/chords">Chords</a></li>
+				<li><a href="/songInfo">Song Information</a></li>
+				<li><a href="/favorites">Favorites</a></li>
+			</ul>
+	  </div>
+
+		<!--Collapseable menu 2 -->
+		<div class="container">
+			<h3>Creep - Radiohead</h3>
+			<h4>Pablo Honey</h4>
+			<ul>
+				<li><a href="/karaoke">Karaoke</a></li>
+				<li><a href="/lyrics">Lyrics</a></li>
+				<li><a href="/chords">Chords</a></li>
+				<li><a href="/songInfo">Song Info</a></li>
+				<li><a href="/favorites">Favorites</a></li>
+			</ul>
+		</div>
+	</div>
+
+ 	<div class="navLink container" id='karaokeContent' style="display: none;">
+		<h1>Karaoke </h1>
+		<iframe id="videoPlayer" width="854" height="480"
+    	src="https://www.youtube.com/embed/J3_DL0q9oq4" frameborder="0"
+    	allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+		<script>
+    var tag = document.createElement("Script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("Script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('videoPlayer', {
+        	events : {
+        		"onReady" : readyToPlay
+        	}
+        });
+    }
+    function readyToPlay(event) {
+    	event.target.playVideo
+    }
+    </script>
+	</div>
+
+	<div class="navLink container" id='lyricsContent' style="display: none;">
+		<h1>Lyrics</h1>
+		<div id="lyricText" class="bottom-gap">tfjdsalfj</div>
+		<script type="text/javascript">
+
+			function nl2br (str, is_xhtml) {   
+    			var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
+    			return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+    		}
+
+    		$.getJSON('apitesting/shakira.json', function(data){
+    			$('#lyricText').html(nl2br(data.lyric));
+    		});
+
+  
+  
+		</script>
+	</div>
+	<div class="navLink container" id='chordsContent' style="display: none;"><h1>Chords</h1></div>
+	<div class="navLink container" id='infoContent' style="display: none;">
+		<h1>Song Info</h1>
+	</div>
+	<div class="navLink container" id='favoriteContent' style="display: none;">
+		<h1>Favorites</h1>
+	</div>
+
+	  <!-- Navigation bar -->
+  <div class="container">
+  	<h4 class="currentlyPlaying">Currently Playing:</h4>
+  	<ul class="nav navbar-nav">	
+			<li><a href="#" data-element="#homeContent">Home</a></li>
+			<li><a href="#" data-element="#karaokeContent">Karaoke</a></li>
+			<li><a href="#" data-element="#lyricsContent">Lyrics</a></li>
+			<li><a href="#" data-element="#chordsContent">Chords</a></li>
+			<li><a href="#" data-element="#infoContent">Song Info</a></li>
+			<li><a href="#" data-element="#favoriteContent">Favorites</a></li>
+		</ul>
+  </div>
+
+</body>
+</html>
