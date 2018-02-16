@@ -98,7 +98,7 @@
     	src="https://www.youtube.com/embed/J3_DL0q9oq4" frameborder="0"
     	allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
-		
+
 	</div>
 
 	<div class="navLink container" id='lyricsContent' style="display: none;">
@@ -117,7 +117,7 @@
 	  <!-- Navigation bar -->
   <div class="container">
   	<h4 class="currentlyPlaying">Currently Playing:</h4>
-  	<ul class="nav navbar-nav">	
+  	<ul class="nav navbar-nav">
 			<li><a href="#" data-element="#homeContent">Home</a></li>
 			<li><a href="#" data-element="#karaokeContent">Karaoke</a></li>
 			<li><a href="#" data-element="#lyricsContent">Lyrics</a></li>
@@ -126,52 +126,7 @@
 			<li><a href="#" data-element="#favoriteContent">Favorites</a></li>
 		</ul>
   </div>
-  <script type="text/javascript">
-  	//Initialize Page Script
-	$(document).ready(function(){
-		$('.nav a').click(function(e){
-			e.preventDefault();
-			e.stopPropagation();
-			$('.navLink').hide();
-			$($(this).attr('data-element')).show();
-			return false;
-		});
-		$(".song").click(songClicked);
-		function songClicked(e) {
-			var songSelected = $(this).attr("id");
-			renderSong(songSelected);
-		}
-	});
-
-  	//Youtube Player script
-    var tag = document.createElement("Script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName("Script")[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('videoPlayer', {
-        	events : {
-        		"onReady" : readyToPlay
-        	}
-        });
-    }
-    function readyToPlay(event) {
-    	event.target.playVideo
-    }
-
-    //Update Script
-    function renderSong(songName) {
-		function nl2br (str, is_xhtml) {   
-			var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
-			return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
-		}
-
-		$.getJSON('apitesting/shakira.json', function(data){
-			$('#lyricText').html(nl2br(data[songName]));
-		});
-	}
-	  
-  </script>
+  <script type="text/javascript" src='/js/peanutButter.js'></script>
 
 </body>
 </html>
