@@ -31,6 +31,19 @@ $(document).ready(function(){
     var songSelected = $(this).attr("id");
     //Function call to update lyrics to selected song
     renderSong(songSelected);
+
+    if (songSelected == "Hips Don't Lie") {
+      $('#songChords').load("/apitesting/chordsShakira.html");
+    } else if (songSelected == "Creep") {
+      $('#songChords').load("/apitesting/chordsRadiohead.html");
+    } else if (songSelected == "Space Oddity") {
+      $('#songChords').load("/apitesting/chordsBowie.html");
+    } else if (songSelected == "Smells Like Teen Spirit") {
+      $('#songChords').load("/apitesting/chordsNirvana.html");
+    }
+    $.getJSON('apitesting/youtubeLinks.json', function(data) {
+      $('#videoPlayer').prop("src", data[songSelected]);
+    })
   }
 });
 
@@ -62,6 +75,12 @@ $(document).ready(function(){
   //Gets lyric data from json file and replaces class lyricText with data from the JSON file
   $.getJSON('apitesting/shakira.json', function(data){
     $('#lyricText').html(nl2br(data[songName]));
+  });
+    $.getJSON('apitesting/shakira.json', function(data){
+    $('.lyricTitle').text(songName);
+  });
+      $.getJSON('apitesting/info.json', function(data){
+    $('#songInformation').html(nl2br(data[songName]));
   });
 }
 
