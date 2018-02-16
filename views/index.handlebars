@@ -7,19 +7,7 @@
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/peanutButter.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('.nav a').click(function(e){
-				e.preventDefault();
-				e.stopPropagation();
 
-				$('.navLink').hide();
-				$($(this).attr('data-element')).show();
-
-				return false;
-			});
-		});
-	</script>
 </head>
 
 <body>
@@ -49,7 +37,9 @@
 		</div>
 		<!--Collapseable menu 1 -->
 		<div class="container" >
-			<h3>Hips Don't Lie - Shakira</h3>
+			<h3>
+				<a href="#" class="song" id="HipsDontLie">Hips Don't Lie - Shakira</a>
+			</h3>
 			<h4>Oral Fixation</h4>
 			<ul>
 				<li><a href="/karaoke">Karaoke</a></li>
@@ -62,7 +52,35 @@
 
 		<!--Collapseable menu 2 -->
 		<div class="container">
-			<h3>Creep - Radiohead</h3>
+			<h3>
+				<a href="#" class="song" id="Creep">Creep - Radiohead</a>
+			</h3>
+			<h4>Pablo Honey</h4>
+			<ul>
+				<li><a href="/karaoke">Karaoke</a></li>
+				<li><a href="/lyrics">Lyrics</a></li>
+				<li><a href="/chords">Chords</a></li>
+				<li><a href="/songInfo">Song Info</a></li>
+				<li><a href="/favorites">Favorites</a></li>
+			</ul>
+		</div>
+				<div class="container">
+			<h3>
+				<a href="#" class="song" id="SpaceOddity">Space Oddity - David Bowie</a>
+			</h3>
+			<h4>Pablo Honey</h4>
+			<ul>
+				<li><a href="/karaoke">Karaoke</a></li>
+				<li><a href="/lyrics">Lyrics</a></li>
+				<li><a href="/chords">Chords</a></li>
+				<li><a href="/songInfo">Song Info</a></li>
+				<li><a href="/favorites">Favorites</a></li>
+			</ul>
+		</div>
+				<div class="container">
+			<h3>
+				<a href="#" class="song" id="SmellsLikeTeenSpirit">Smells Like Teen Spirit - Nirvana</a>
+			</h3>
 			<h4>Pablo Honey</h4>
 			<ul>
 				<li><a href="/karaoke">Karaoke</a></li>
@@ -80,41 +98,13 @@
     	src="https://www.youtube.com/embed/J3_DL0q9oq4" frameborder="0"
     	allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
-		<script>
-    var tag = document.createElement("Script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName("Script")[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('videoPlayer', {
-        	events : {
-        		"onReady" : readyToPlay
-        	}
-        });
-    }
-    function readyToPlay(event) {
-    	event.target.playVideo
-    }
-    </script>
+		
 	</div>
 
 	<div class="navLink container" id='lyricsContent' style="display: none;">
 		<h1>Lyrics</h1>
-		<div id="lyricText" class="bottom-gap">tfjdsalfj</div>
-		<script type="text/javascript">
+		<div id="lyricText" class="bottom-gap">No Song Currently Playing</div>
 
-			function nl2br (str, is_xhtml) {   
-    			var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
-    			return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
-    		}
-
-    		$.getJSON('apitesting/shakira.json', function(data){
-    			$('#lyricText').html(nl2br(data.lyric));
-    		});
-
-  
-  
-		</script>
 	</div>
 	<div class="navLink container" id='chordsContent' style="display: none;"><h1>Chords</h1></div>
 	<div class="navLink container" id='infoContent' style="display: none;">
@@ -136,6 +126,52 @@
 			<li><a href="#" data-element="#favoriteContent">Favorites</a></li>
 		</ul>
   </div>
+  <script type="text/javascript">
+  	//Initialize Page Script
+	$(document).ready(function(){
+		$('.nav a').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$('.navLink').hide();
+			$($(this).attr('data-element')).show();
+			return false;
+		});
+		$(".song").click(songClicked);
+		function songClicked(e) {
+			var songSelected = $(this).attr("id");
+			renderSong(songSelected);
+		}
+	});
+
+  	//Youtube Player script
+    var tag = document.createElement("Script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("Script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('videoPlayer', {
+        	events : {
+        		"onReady" : readyToPlay
+        	}
+        });
+    }
+    function readyToPlay(event) {
+    	event.target.playVideo
+    }
+
+    //Update Script
+    function renderSong(songName) {
+		function nl2br (str, is_xhtml) {   
+			var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
+			return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+		}
+
+		$.getJSON('apitesting/shakira.json', function(data){
+			$('#lyricText').html(nl2br(data[songName]));
+		});
+	}
+	  
+  </script>
 
 </body>
 </html>
