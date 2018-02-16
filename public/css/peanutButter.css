@@ -48,8 +48,24 @@
   background-color: grey;
 }
 
-/* Style for video player on karaoke page */
+/* Style for the search bar */
+#homeContent{
+  padding-top: 20px;
+}
 
+/* Style for accordion wigets */
+.accordionWidget{
+  margin: 20px;
+}
+.rotate{
+-webkit-transform: rotate(90deg);  /* Chrome, Safari, Opera */
+  -moz-transform: rotate(90deg);  /* Firefox */
+  -ms-transform: rotate(90deg);  /* IE 9 */
+    transform: rotate(90deg);  /* Standard syntax */
+}
+
+/* Style for video player on karaoke page */
+/* video container is the class of the iframe for the video*/
 .video-container {
 	position:relative;
 	padding-bottom:56.25%;

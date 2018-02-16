@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/peanutButter.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -33,64 +36,91 @@
 
 		<!--Recent bar-->
 	  <div class="container">
-			<h2>Recent Searches...</h2>
+					<h2>Recent Searches...</h2>
 		</div>
-		<!--Collapseable menu 1 -->
-		<div class="container" >
-			<h3>
-				<a href="#" class="song" id="HipsDontLie">Hips Don't Lie - Shakira</a>
-			</h3>
-			<h4>Oral Fixation</h4>
-			<ul>
-				<li><a href="/karaoke">Karaoke</a></li>
-				<li><a href="/lyrics">Lyrics</a></li>
-				<li><a href="/chords">Chords</a></li>
-				<li><a href="/songInfo">Song Information</a></li>
-				<li><a href="/favorites">Favorites</a></li>
-			</ul>
-	  </div>
+		<!--Beginning of accordion widgets-->
+		<div class="accordionWidget">
+		    <div class="panel-group" id="accordion">
+		        <div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-menu-right"></span>Hips Don't Lie - Shakira</a>
+		                </h4>
+		            </div>
+		            <div id="collapseOne" class="panel-collapse collapse">
+		                <div class="panel-body">
+		                    <p><strong>Oral Fixation</strong></p>
+		                    <ul>
+		              				<li><a href="/karaoke">Karaoke</a></li>
+		              				<li><a href="/lyrics">Lyrics</a></li>
+		              				<li><a href="/chords">Chords</a></li>
+		              				<li><a href="/songInfo">Song Information</a></li>
+		              				<li><a href="/favorites">Favorites</a></li>
+		              			</ul>
+		                </div>
+		            </div>
+		        </div> <!-- End of element-->
+		        <div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-menu-right"></span>Creep - Radiohead</a>
+		                </h4>
+		            </div>
+		            <div id="collapseTwo" class="panel-collapse collapse">
+		                <div class="panel-body">
+		                    <p><strong>Pablo Honey</strong></p>
+		                    <ul>
+		                      <li><a href="/karaoke">Karaoke</a></li>
+		                      <li><a href="/lyrics">Lyrics</a></li>
+		                      <li><a href="/chords">Chords</a></li>
+		                      <li><a href="/songInfo">Song Information</a></li>
+		                      <li><a href="/favorites">Favorites</a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div> <!-- End of element-->
+		        <div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-menu-right"></span>Space Oddity - David Bowie</a>
+		                </h4>
+		            </div>
+		            <div id="collapseThree" class="panel-collapse collapse">
+		                <div class="panel-body">
+		                    <p><strong>Wild Eyed Boy from Freecloud</strong></p>
+		                    <ul>
+		                      <li><a href="/karaoke">Karaoke</a></li>
+		                      <li><a href="/lyrics">Lyrics</a></li>
+		                      <li><a href="/chords">Chords</a></li>
+		                      <li><a href="/songInfo">Song Information</a></li>
+		                      <li><a href="/favorites">Favorites</a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div> <!-- End of element-->
+		        <div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-menu-right"></span>Paper Bag - Fiona Apple</a>
+		                </h4>
+		            </div>
+		            <div id="collapseFour" class="panel-collapse collapse">
+		                <div class="panel-body">
+		                    <p><strong>When the Pawn</strong></p>
+		                    <ul>
+		                      <li><a href="/karaoke">Karaoke</a></li>
+		                      <li><a href="/lyrics">Lyrics</a></li>
+		                      <li><a href="/chords">Chords</a></li>
+		                      <li><a href="/songInfo">Song Information</a></li>
+		                      <li><a href="/favorites">Favorites</a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div> <!-- End of element-->
+		    </div>
+		</div> <!--End of accordion widgets-->
 
-		<!--Collapseable menu 2 -->
-		<div class="container">
-			<h3>
-				<a href="#" class="song" id="Creep">Creep - Radiohead</a>
-			</h3>
-			<h4>Pablo Honey</h4>
-			<ul>
-				<li><a href="/karaoke">Karaoke</a></li>
-				<li><a href="/lyrics">Lyrics</a></li>
-				<li><a href="/chords">Chords</a></li>
-				<li><a href="/songInfo">Song Info</a></li>
-				<li><a href="/favorites">Favorites</a></li>
-			</ul>
-		</div>
-				<div class="container">
-			<h3>
-				<a href="#" class="song" id="SpaceOddity">Space Oddity - David Bowie</a>
-			</h3>
-			<h4>Pablo Honey</h4>
-			<ul>
-				<li><a href="/karaoke">Karaoke</a></li>
-				<li><a href="/lyrics">Lyrics</a></li>
-				<li><a href="/chords">Chords</a></li>
-				<li><a href="/songInfo">Song Info</a></li>
-				<li><a href="/favorites">Favorites</a></li>
-			</ul>
-		</div>
-				<div class="container">
-			<h3>
-				<a href="#" class="song" id="SmellsLikeTeenSpirit">Smells Like Teen Spirit - Nirvana</a>
-			</h3>
-			<h4>Pablo Honey</h4>
-			<ul>
-				<li><a href="/karaoke">Karaoke</a></li>
-				<li><a href="/lyrics">Lyrics</a></li>
-				<li><a href="/chords">Chords</a></li>
-				<li><a href="/songInfo">Song Info</a></li>
-				<li><a href="/favorites">Favorites</a></li>
-			</ul>
-		</div>
-	</div>
+	</div> <!--End of homepage-->
 
  	<div class="navLink container" id='karaokeContent' style="display: none;">
 		<h1>Karaoke </h1>
