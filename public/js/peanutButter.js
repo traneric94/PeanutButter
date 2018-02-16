@@ -12,7 +12,18 @@ $(document).ready(function(){
     //Needed to close document ready function
     return false;
   });
+  $('.song').click(function(e){
 
+    e.preventDefault();
+    e.stopPropagation();
+  
+    //Hide all navLinks, show on click
+    $('.navLink').hide();
+    $($(this).attr('data-element')).show();
+
+    //Needed to close document ready function
+    return false;
+  });
   //Click listener on each song
   $(".song").click(songClicked);
   function songClicked(e) {
