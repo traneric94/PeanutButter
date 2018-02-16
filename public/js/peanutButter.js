@@ -44,6 +44,11 @@ $(document).ready(function(){
     $.getJSON('apitesting/youtubeLinks.json', function(data) {
       $('#videoPlayer').prop("src", data[songSelected]);
     })
+  console.log("here")
+  $.getJSON('apitesting/images.json', function(data){
+    $('#songImages').attr("src", data[songSelected])
+  console.log(data[songSelected]);
+  });
   }
 });
 
@@ -81,7 +86,8 @@ $(document).ready(function(){
   });
       $.getJSON('apitesting/info.json', function(data){
     $('#songInformation').html(nl2br(data[songName]));
-  });
+  });     
+
 }
 
 /* Script for Accordion Widgets*/
