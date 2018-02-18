@@ -31,24 +31,6 @@ $(document).ready(function(){
     var songSelected = $(this).attr("id");
     //Function call to update lyrics to selected song
     renderSong(songSelected);
-
-    if (songSelected == "Hips Don't Lie") {
-      $('#songChords').load("/apitesting/chordsShakira.html");
-    } else if (songSelected == "Creep") {
-      $('#songChords').load("/apitesting/chordsRadiohead.html");
-    } else if (songSelected == "Space Oddity") {
-      $('#songChords').load("/apitesting/chordsBowie.html");
-    } else if (songSelected == "Smells Like Teen Spirit") {
-      $('#songChords').load("/apitesting/chordsNirvana.html");
-    }
-    $.getJSON('apitesting/youtubeLinks.json', function(data) {
-      $('#videoPlayer').prop("src", data[songSelected]);
-    })
-  console.log("here")
-  $.getJSON('apitesting/images.json', function(data){
-    $('#songImages').attr("src", data[songSelected])
-  console.log(data[songSelected]);
-  });
   }
 });
 
@@ -70,6 +52,15 @@ $(document).ready(function(){
 
   //Update Script
   function renderSong(songName) {
+        if (songName == "Hips Don't Lie") {
+      $('#songChords').load("/apitesting/chordsShakira.html");
+    } else if (songName == "Creep") {
+      $('#songChords').load("/apitesting/chordsRadiohead.html");
+    } else if (songName == "Space Oddity") {
+      $('#songChords').load("/apitesting/chordsBowie.html");
+    } else if (songName == "Smells Like Teen Spirit") {
+      $('#songChords').load("/apitesting/chordsNirvana.html");
+    }
 
     //Changes lyric format to html appropriate format (takes all newlines in javascript language and changes them to html language <br> breaks)
   function nl2br (str, is_xhtml) {
@@ -78,14 +69,13 @@ $(document).ready(function(){
   }
 
   //Gets lyric data from json file and replaces class lyricText with data from the JSON file
-  $.getJSON('apitesting/shakira.json', function(data){
-    $('#lyricText').html(nl2br(data[songName]));
-  });
-    $.getJSON('apitesting/shakira.json', function(data){
-    $('.lyricTitle').text(songName);
-  });
-      $.getJSON('apitesting/info.json', function(data){
-    $('#songInformation').html(nl2br(data[songName]));
+
+      $.getJSON('apitesting/data.json', function(data){
+        $('.lyricTitle').text(songName);
+        $('#songInformation').html(nl2br(data[songName][0].info));
+        $('#lyricText').html(nl2br((data[songName][0].lyrics)));
+        $('#videoPlayer').prop("src", data[songName][0].videoURL);
+        $('#songImages').attr("src", data[songName][0].albumArt);
   });     
 
 }
@@ -96,7 +86,6 @@ $(document).ready(function(){
     $(".collapse.in").each(function(){
       $(this).siblings(".panel-heading").find(".glyphicon").addClass("rotate");
     });
-
     // Toggle plus minus icon on show hide of collapse element
     $(".collapse").on('show.bs.collapse', function(){
       $(this).parent().find(".glyphicon").addClass("rotate");
