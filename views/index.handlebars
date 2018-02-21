@@ -10,6 +10,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/js/youtubeAPI.js"></script>
+	<script async defer src="https://apis.google.com/js/api.js" 
+        onload="this.onload=function(){};handleClientLoad()" 
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+	</script>
 
 </head>
 
@@ -25,14 +30,14 @@
 			<div class="row">
 	        <div class="col-sm-6 col-sm-offset-3">
 	            <div id="imaginary_container">
-	                <div class="input-group stylish-input-group">
-	                    <input type="text" class="form-control"  placeholder="Search" >
+	                <form id="search" class="input-group stylish-input-group">
+	                    <input type="text" class="form-control"  placeholder="Search" value="">
 	                    <span class="input-group-addon">
 	                        <button type="submit">
 	                            <span class="glyphicon glyphicon-search"></span>
 	                        </button>
 	                    </span>
-	                </div>
+	                </form>
 	            </div>
 	        </div>
 		  </div>
@@ -45,78 +50,27 @@
 		<!--Beginning of accordion widgets-->
 		<div class="accordionWidget">
 		    <div class="panel-group" id="accordion">
-		        <div class="panel panel-default">
+		    	{{#each songs}}
+		        <div class="panel panel-default"> <!-- Start of element -->
 		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-menu-right"></span>Hips Don't Lie - Shakira</a>
+		            	<h4 class="panel-title">
+		  
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}"><span class="glyphicon glyphicon-menu-right"></span>{{name}}</a>
 		                </h4>
 		            </div>
-		            <div id="collapseOne" class="panel-collapse collapse">
+		            <div id=collapse{{songId}} class="panel-collapse collapse">
 		                <div class="panel-body">
-		                    <p><strong>Oral Fixation</strong></p>
+		                    <p><strong>{{album}}</strong></p>
 		                    <ul>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#infoContent">Song Info</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke{{songId}}x</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
 		              			</ul>
 		                </div>
 		            </div>
-		        </div> <!-- End of element-->
-		        <div class="panel panel-default">
-		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-menu-right"></span>Creep - Radiohead</a>
-		                </h4>
-		            </div>
-		            <div id="collapseTwo" class="panel-collapse collapse">
-		                <div class="panel-body">
-		                    <p><strong>Pablo Honey</strong></p>
-		                    <ul>
-													<li><a href="#" class='song' id="Creep" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Creep" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Creep" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Creep" data-element="#infoContent">Song Info</a></li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div> <!-- End of element-->
-		        <div class="panel panel-default">
-		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-menu-right"></span>Space Oddity - David Bowie</a>
-		                </h4>
-		            </div>
-		            <div id="collapseThree" class="panel-collapse collapse">
-		                <div class="panel-body">
-		                    <p><strong>Wild Eyed Boy from Freecloud</strong></p>
-		                    <ul>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#infoContent">Song Info</a></li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div> <!-- End of element-->
-		        <div class="panel panel-default">
-		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-menu-right"></span>Smells Like Teen Spirit - Nirvana</a>
-		                </h4>
-		            </div>
-		            <div id="collapseFour" class="panel-collapse collapse">
-		                <div class="panel-body">
-		                    <p><strong>Nevermind</strong></p>
-		                    <ul>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#infoContent">Song Info</a></li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div> <!-- End of element-->
+		        </div> <!-- End of element-->		   
+		        {{/each}}
 		    </div>
 		</div> <!--End of accordion widgets-->
 
