@@ -1,4 +1,4 @@
-// Script for showing and hiding elements on the page
+  // Script for showing and hiding elements on the page
 $(document).ready(function(){
   $('.nav a').click(function(e){
     clickNav.bind(this)(e);
@@ -27,24 +27,28 @@ $(document).ready(function(){
   }
 
   $('#search').submit(function(e) {
+
     e.preventDefault();
     e.stopPropagation();
     // useless go to the lowest context where searchTerm is defined --> global
     var searchTerm = $(this).children("input").val();
-    getYoutube(searchTerm);    
+    console.log(searchTerm);
+
+    
+    //getYoutube(searchTerm);    
     return false;
   })
 
-  function getYoutube (searchTerm) {
-    var params = {
-      'maxResults' : '1',
-      'q' : searchTerm,
-      'type' : 'video',
-      'videoEmbeddable' : true,
-      'part' : 'snippet'
-    };
-    buildApiRequest('GET', '/youtube/v3/search', params);
-  }
+  // function getYoutube (searchTerm) {
+  //   var params = {
+  //     'maxResults' : '1',
+  //     'q' : searchTerm,
+  //     'type' : 'video',
+  //     'videoEmbeddable' : true,
+  //     'part' : 'snippet'
+  //   };
+  //   buildApiRequest('GET', '/youtube/v3/search', params);
+  // }
 });
 
 
