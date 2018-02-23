@@ -2,10 +2,13 @@
     background: white !important;
 }
 body {
-  background: #F4D03F !important;
+  /*background: #F4D03F !important;*/
+  /*background: #FFEBC1 !important;*/
+  background: #FFF1A3 !important;
 }
 .purple {
   background: #9B59B6 !important;
+  /*background: #B5A4CC !important;*/
   height: 150px !important;
 }
 .picture {
@@ -25,7 +28,8 @@ body {
 }
 
 .nav {
-    background-color: #2C3E50;
+    /*background-color: #2C3E50;*/
+    background-color: #739ACC;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -101,3 +105,15 @@ img {
     width: 100% !important;/* you can use % */
     height: auto !important;
 }
+
+
+/*.navbar-nav {
+  color: white;
+}*/
+
+/*#signin {
+  position:
+}
+#signout {
+
+}*/
