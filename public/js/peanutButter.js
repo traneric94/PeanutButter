@@ -27,16 +27,12 @@ $(document).ready(function(){
   }
 
   $('#search').submit(function(e) {
-
-    e.preventDefault();
-    e.stopPropagation();
+    //e.preventDefault();
+    //e.stopPropagation();
     // useless go to the lowest context where searchTerm is defined --> global
     var searchTerm = $(this).children("input").val();
     console.log(searchTerm);
-
-    
-    //getYoutube(searchTerm);    
-    return false;
+    //getYoutube(searchTerm);
   })
 
   // function getYoutube (searchTerm) {

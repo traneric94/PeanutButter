@@ -4,9 +4,10 @@ exports.addSong = function(req, res) {
 	counter++;
 	var newSong = 
 	{
-			"name" : req.query.search,
+			"name" : req.body.search,
 			"songId" : counter
 	}
 	data.songs.push(newSong);
-	res.render('index', data);
+	res.redirect('/');
+	//res.render('index', data);
 }
