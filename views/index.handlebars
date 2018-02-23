@@ -3,36 +3,53 @@
 	<title>Peanut Butter</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-signin-client_id" content='1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com'>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/peanutButter.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!-- 	<script ser="/js/auth.js"></script>
+	<script src="/js/search.js"></script> -->
+
 
 </head>
 
 <body>
+ 	<div class='container'>
+		<!--Google login-->
+		<div id='signin' class="g-signin2" data-onsuccess="onSignIn" style='padding-top:10px;float:right;'></div>
+	</div>
+	<div class='container'><div id='signout' onclick="signOut();" style='float:right;'>Sign out</div></div>
   <nav class="container navbar navbar-default purple">
         <a class="navbar-brand"><img class="picture img-fluid" src="https://i.imgur.com/f6v1LWI.jpg">
         </a>
         <h3>Peanut Butter</h3>
   </nav>
+	<!--Login page tab-->
+	<div class='container'>
+		<div id='loginPage'>
+			<h1 id='welcome'></h1>
+
+		</div>
+  </div>
+
 	<div class="navLink container" id='homeContent'>
 		<!--Search bar -->
 		<div class="container">
 			<div class="row">
 	        <div class="col-sm-6 col-sm-offset-3">
 	            <div id="imaginary_container">
-	                <div class="input-group stylish-input-group">
-	                    <input type="text" class="form-control"  placeholder="Search" >
+	                <form id="search" class="input-group stylish-input-group" action="/add" role="form" method="post">
+	                    <input type="text" class="form-control"  placeholder="Search for a SONG" value="" name="search">
 	                    <span class="input-group-addon">
 	                        <button type="submit">
 	                            <span class="glyphicon glyphicon-search"></span>
 	                        </button>
 	                    </span>
-	                </div>
+	                </form>
 	            </div>
 	        </div>
 		  </div>
@@ -45,78 +62,27 @@
 		<!--Beginning of accordion widgets-->
 		<div class="accordionWidget">
 		    <div class="panel-group" id="accordion">
-		        <div class="panel panel-default">
+		    	{{#each songs}}
+		        <div class="panel panel-default"> <!-- Start of element -->
 		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-menu-right"></span>Hips Don't Lie - Shakira</a>
+		            	<h4 class="panel-title">
+
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}"><span class="glyphicon glyphicon-menu-right"></span>{{name}}</a>
 		                </h4>
 		            </div>
-		            <div id="collapseOne" class="panel-collapse collapse">
+		            <div id=collapse{{songId}} class="panel-collapse collapse">
 		                <div class="panel-body">
-		                    <p><strong>Oral Fixation</strong></p>
+		                    <p><strong>{{album}}</strong></p>
 		                    <ul>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#infoContent">Song Info</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke{{songId}}x</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
 		              			</ul>
 		                </div>
 		            </div>
 		        </div> <!-- End of element-->
-		        <div class="panel panel-default">
-		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-menu-right"></span>Creep - Radiohead</a>
-		                </h4>
-		            </div>
-		            <div id="collapseTwo" class="panel-collapse collapse">
-		                <div class="panel-body">
-		                    <p><strong>Pablo Honey</strong></p>
-		                    <ul>
-													<li><a href="#" class='song' id="Creep" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Creep" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Creep" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Creep" data-element="#infoContent">Song Info</a></li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div> <!-- End of element-->
-		        <div class="panel panel-default">
-		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-menu-right"></span>Space Oddity - David Bowie</a>
-		                </h4>
-		            </div>
-		            <div id="collapseThree" class="panel-collapse collapse">
-		                <div class="panel-body">
-		                    <p><strong>Wild Eyed Boy from Freecloud</strong></p>
-		                    <ul>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Space Oddity" data-element="#infoContent">Song Info</a></li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div> <!-- End of element-->
-		        <div class="panel panel-default">
-		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-menu-right"></span>Smells Like Teen Spirit - Nirvana</a>
-		                </h4>
-		            </div>
-		            <div id="collapseFour" class="panel-collapse collapse">
-		                <div class="panel-body">
-		                    <p><strong>Nevermind</strong></p>
-		                    <ul>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Smells Like Teen Spirit" data-element="#infoContent">Song Info</a></li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div> <!-- End of element-->
+		        {{/each}}
 		    </div>
 		</div> <!--End of accordion widgets-->
 
@@ -169,10 +135,15 @@
 				</div>
 			</div>
 	</div> -->
+
 	  <!-- Navigation bar -->
-  <div>
+
   	<ul class="nav navbar-nav">
-			<li><a href="#" data-element="#homeContent"></a>Home</li>
+
+			<!--Currently playing text block-->
+			<h4 id ='currentlyPlaying'>Currently Playing: </h4>
+
+			<li><a href="#" data-element="#homeContent" >Home</a></li>
 			<li><a href="#" data-element="#karaokeContent">Karaoke</a></li>
 			<li><a href="#" data-element="#lyricsContent">Lyrics</a></li>
 			<li><a href="#" data-element="#chordsContent">Chords</a></li>
@@ -182,9 +153,17 @@
 		</ul>
   </div>
 
-	<!-- <img src="./Icons/karaoke_icon.png"> -->
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 
   <script type="text/javascript" src='/js/peanutButter.js'></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="search.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
 </body>
 </html>

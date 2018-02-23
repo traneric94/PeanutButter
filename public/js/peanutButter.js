@@ -1,38 +1,52 @@
-// Script for showing and hiding elements on the page
+  // Script for showing and hiding elements on the page
 $(document).ready(function(){
   $('.nav a').click(function(e){
-
-    e.preventDefault();
-    e.stopPropagation();
-
+    clickNav.bind(this)(e);
     //Hide all navLinks, show on click
-    $('.navLink').hide();
-    $($(this).attr('data-element')).show();
 
     //Needed to close document ready function
     return false;
   });
+
   $('.song').click(function(e){
-
-    e.preventDefault();
-    e.stopPropagation();
-  
+    //TODO
+    clickNav.bind(this)(e);
     //Hide all navLinks, show on click
-    $('.navLink').hide();
-    $($(this).attr('data-element')).show();
+    var songSelected = $(this).attr("id");
+    renderSong(songSelected);
 
     //Needed to close document ready function
     return false;
   });
-  //Click listener on each song
-  $(".song").click(songClicked);
-  function songClicked(e) {
-    //Pulls the song id (finds out which song was clicked and store into songSelected)
-    var songSelected = $(this).attr("id");
-    //Function call to update lyrics to selected song
-    renderSong(songSelected);
+
+  function clickNav(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.navLink').hide();
+    $($(this).attr('data-element')).show();
   }
+
+  $('#search').submit(function(e) {
+    //e.preventDefault();
+    //e.stopPropagation();
+    // useless go to the lowest context where searchTerm is defined --> global
+    var searchTerm = $(this).children("input").val();
+    console.log(searchTerm);
+    //getYoutube(searchTerm);
+  })
+
+  // function getYoutube (searchTerm) {
+  //   var params = {
+  //     'maxResults' : '1',
+  //     'q' : searchTerm,
+  //     'type' : 'video',
+  //     'videoEmbeddable' : true,
+  //     'part' : 'snippet'
+  //   };
+  //   buildApiRequest('GET', '/youtube/v3/search', params);
+  // }
 });
+
 
   //Youtube Player script
   var tag = document.createElement("Script");
@@ -51,32 +65,24 @@ $(document).ready(function(){
   }
 
   //Update Script
-  function renderSong(songName) {
-        if (songName == "Hips Don't Lie") {
-      $('#songChords').load("/apitesting/chordsShakira.html");
-    } else if (songName == "Creep") {
-      $('#songChords').load("/apitesting/chordsRadiohead.html");
-    } else if (songName == "Space Oddity") {
-      $('#songChords').load("/apitesting/chordsBowie.html");
-    } else if (songName == "Smells Like Teen Spirit") {
-      $('#songChords').load("/apitesting/chordsNirvana.html");
-    }
+  function renderSong(songId) {
+
+    $.getJSON('apitesting/data.json', function(data){
+      var chordsDirectory = "/apitesting/";
+      chordsDirectory = chordsDirectory.concat(data.songs[songId].chords);
+      $('#songChords').load(chordsDirectory);
+      $('.lyricTitle').text(data.songs[songId].name);
+      $('#songInformation').html(nl2br(data.songs[songId].info));
+      $('#lyricText').html(nl2br((data.songs[songId].lyrics)));
+      $('#videoPlayer').prop("src", data.songs[songId].videoURL);
+      $('#songImages').attr("src", data.songs[songId].albumArt);
+  });
 
     //Changes lyric format to html appropriate format (takes all newlines in javascript language and changes them to html language <br> breaks)
   function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
     return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
   }
-
-  //Gets lyric data from json file and replaces class lyricText with data from the JSON file
-
-      $.getJSON('apitesting/data.json', function(data){
-        $('.lyricTitle').text(songName);
-        $('#songInformation').html(nl2br(data[songName][0].info));
-        $('#lyricText').html(nl2br((data[songName][0].lyrics)));
-        $('#videoPlayer').prop("src", data[songName][0].videoURL);
-        $('#songImages').attr("src", data[songName][0].albumArt);
-  });     
 
 }
 
@@ -93,3 +99,19 @@ $(document).ready(function(){
       $(this).parent().find(".glyphicon").removeClass("rotate");
     });
 });
+
+/*Script for authentication*/
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  $('#welcome').html("Welcome back " + profile.getGivenName());
+
+}
+
+/*Script for sign out*/
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+    $('#welcome').html("");
+  });
+}
