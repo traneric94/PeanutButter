@@ -16,7 +16,7 @@ $(document).ready(function(){
 
     e.preventDefault();
     e.stopPropagation();
-  
+
     //Hide all navLinks, show on click
     $('.navLink').hide();
     $($(this).attr('data-element')).show();
@@ -54,11 +54,16 @@ $(document).ready(function(){
   function renderSong(songName) {
         if (songName == "Hips Don't Lie") {
       $('#songChords').load("/apitesting/chordsShakira.html");
+      // Add name to currently playing bar
+      $('#currentlyPlaying').html("Currently Playing: Hips Don't Lie");
     } else if (songName == "Creep") {
       $('#songChords').load("/apitesting/chordsRadiohead.html");
+      $('#currentlyPlaying').html("Currently Playing: Creep");
     } else if (songName == "Space Oddity") {
       $('#songChords').load("/apitesting/chordsBowie.html");
+      $('#currentlyPlaying').html("Currently Playing: Space Oddity");
     } else if (songName == "Smells Like Teen Spirit") {
+      $('#currentlyPlaying').html("Currently Playing: Smells Like Teen Spirit");
       $('#songChords').load("/apitesting/chordsNirvana.html");
     }
 
@@ -76,7 +81,7 @@ $(document).ready(function(){
         $('#lyricText').html(nl2br((data[songName][0].lyrics)));
         $('#videoPlayer').prop("src", data[songName][0].videoURL);
         $('#songImages').attr("src", data[songName][0].albumArt);
-  });     
+  });
 
 }
 
@@ -93,3 +98,19 @@ $(document).ready(function(){
       $(this).parent().find(".glyphicon").removeClass("rotate");
     });
 });
+
+/*Script for authentication*/
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  $('#welcome').html("Welcome back " + profile.getGivenName());
+
+}
+
+/*Script for sign out*/
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+    $('#welcome').html("");
+  });
+}

@@ -3,6 +3,7 @@
 	<title>Peanut Butter</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-signin-client_id" content='1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com'>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/peanutButter.css">
@@ -15,10 +16,27 @@
 
 <body>
   <nav class="container navbar navbar-default purple">
+		<div class='row'>
+			<div class=".col-sm-9">
         <a class="navbar-brand"><img class="picture img-fluid" src="https://i.imgur.com/f6v1LWI.jpg">
         </a>
         <h3>Peanut Butter</h3>
+			</div>
+			<div class='.col-sm-3'>
+				<!--Google login-->
+				<div id='signin' class="g-signin2" data-onsuccess="onSignIn"></div>
+				<div id='signout' onclick="signOut();">Sign out</div>
+			</div>
+		</div>
   </nav>
+	<!--Login page tab-->
+	<div class='container'>
+		<div id='loginPage'>
+			<h1 id='welcome'></h1>
+
+		</div>
+  </div>
+
 	<div class="navLink container" id='homeContent'>
 		<!--Search bar -->
 		<div class="container">
@@ -169,17 +187,24 @@
 				</div>
 			</div>
 	</div> -->
+
 	  <!-- Navigation bar -->
-  <div>
+
   	<ul class="nav navbar-nav">
-			<li><a href="#" data-element="#homeContent" class="glyphicon glyphicon-home"></a></li>
+			<!--Currently playing text block-->
+			<h4 id ='currentlyPlaying'>Currently Playing: </h4>
+
+			<li><a href="#" data-element="#homeContent" >Home</a></li>
 			<li><a href="#" data-element="#karaokeContent">Karaoke</a></li>
 			<li><a href="#" data-element="#lyricsContent">Lyrics</a></li>
 			<li><a href="#" data-element="#chordsContent">Chords</a></li>
 			<li><a href="#" data-element="#infoContent">Song Info</a></li>
 			<!-- <li><a href="#" data-element="#favoriteContent">Favorites</a></li> -->
 		</ul>
-  </div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
   <script type="text/javascript" src='/js/peanutButter.js'></script>
 
 </body>
