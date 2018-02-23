@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="/css/peanutButter.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- 	<script ser="/js/auth.js"></script>
 	<script src="/js/search.js"></script> -->
 
@@ -74,7 +74,7 @@
 		                <div class="panel-body">
 		                    <p><strong>{{album}}</strong></p>
 		                    <ul>
-													<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke{{songId}}x</a></li>
+													<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
 													<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
 													<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
 													<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
@@ -107,7 +107,7 @@
 	</div>
 	<div class="navLink container" id='infoContent' style="display: none;">
 		<h1 class="lyricTitle">Song Information</h1>
-			<a><img class="picture" id="songImages" src="#"></a>
+			<!-- <a><img class="picture" id="songImages" src="#"></a> -->
 			<h6 id="songInformation" class="bottom-gap">No Song Currently Playing</h6>
 	</div>
  <!-- 	<div class="navLink container" id='favoriteContent' style="display: none;">
@@ -138,10 +138,12 @@
 
 	  <!-- Navigation bar -->
 
-  	<ul class="nav navbar-nav">
+  	<ul class="nav navbar-nav container">
 
 			<!--Currently playing text block-->
+
 			<h4 id ='currentlyPlaying'>Currently Playing: </h4>
+			<h4 class="lyricTitle"></h4>
 
 			<li><a href="#" data-element="#homeContent" >Home</a></li>
 			<li><a href="#" data-element="#karaokeContent">Karaoke</a></li>
