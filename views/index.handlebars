@@ -10,6 +10,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- test -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 </head>
@@ -28,21 +30,21 @@
 	<!--Login page tab-->
 	<div class='container'>
 		<div id='loginPage'>
-			<h1 id='welcome'></h1>
 
 		</div>
   </div>
 
 	<div class="navLink container" id='homeContent'>
+		<h3 id='welcome'></h3>
 		<!--Search bar -->
 		<div class="container">
 			<div class="row">
 	        <div class="col-sm-6 col-sm-offset-3">
 	            <div id="imaginary_container">
-	                <div class="input-group stylish-input-group">
-	                    <input type="text" class="form-control"  placeholder="Search for a SONG" name="search" id='inputSong'>
+	                <div class="input-group stylish-input-group ">
+	                    <input type="text" class="form-control" placeholder="Search for a SONG" name="search" id='inputSong'>
 	                    <span class="input-group-addon">
-	                        <button type="submit" id = 'submit'>
+	                        <button type="submit" id ='submit'>
 	                            <span class="glyphicon glyphicon-search"></span>
 	                        </button>
 	                    </span>
@@ -55,14 +57,14 @@
 		<!--This feature is displayed when someone enters in a search in the search
 				bar that is not found in the Json data-->
 		<div class='container'>
-				<div id='notfound'style="display: none;">
-					<h3>Search not found</h3>
+				<div id='notFound' style="display: none;">
 				</div>
 		</div>
 
 		<!--Recent bar-->
 	  <div class="container">
-					<h2>Recent Searches...</h2>
+					<h3 id="Searching">Recent Searches</h3>
+					<h4 id="searchingDetail"></h4>
 		</div>
 		<!--Beginning of accordion widgets-->
 		<div class="accordionWidget">

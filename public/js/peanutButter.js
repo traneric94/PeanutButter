@@ -41,11 +41,15 @@ $(document).ready(function(){
           renderSong(i);
           foundSong = true;
           $('#notFound').hide();
+          $('#Searching').text("Recent Searches");
+          $('#searchingDetail').text("")
+
         }
       }
       // Checks to see if song was found
       if(!foundSong){
-        $('#notFound').show();
+        $('#Searching').text("Song Not Available");
+        $('#searchingDetail').text("Check spelling or browse library")
       }
 
     }); //End of json get request
@@ -77,7 +81,7 @@ $(document).ready(function(){
       });
   }
   function readyToPlay(event) {
-    event.target.playVideo
+    event.target.playVideo();
   }
 
   //Update Script
