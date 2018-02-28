@@ -38,7 +38,7 @@ app.get('/', index.view);
 
 // Example route
 // app.get('/users', user.list);
-app.post('/add', add.addSong);
+//app.post('/add', add.addSong);
 
 
 http.createServer(app).listen(app.get('port'), function(){

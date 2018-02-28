@@ -39,18 +39,26 @@
 			<div class="row">
 	        <div class="col-sm-6 col-sm-offset-3">
 	            <div id="imaginary_container">
-	                <form id="search" class="input-group stylish-input-group" action="/add" role="form" method="post">
-	                    <input type="text" class="form-control"  placeholder="Search for a SONG" value="" name="search">
+	                <div class="input-group stylish-input-group">
+	                    <input type="text" class="form-control"  placeholder="Search for a SONG" name="search" id='inputSong'>
 	                    <span class="input-group-addon">
-	                        <button type="submit">
+	                        <button type="submit" id = 'submit'>
 	                            <span class="glyphicon glyphicon-search"></span>
 	                        </button>
 	                    </span>
-	                </form>
+	                </div>
 	            </div>
 	        </div>
 		  </div>
 	  </div>
+
+		<!--This feature is displayed when someone enters in a search in the search
+				bar that is not found in the Json data-->
+		<div class='container'>
+				<div id='notfound'style="display: none;">
+					<h3>Search not found</h3>
+				</div>
+		</div>
 
 		<!--Recent bar-->
 	  <div class="container">
@@ -128,7 +136,7 @@
 		              			</ul>
 		                </div>
 		            </div>
-		        </div>  End of element
+		        </div>  <!--End of element-->
 				</div>
 			</div>
 	</div>
@@ -158,8 +166,8 @@
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script type="text/javascript" src='/js/peanutButter.js'></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="auth.js"></script>
-	<script src="search.js"></script>
+	<!--<script src="auth.js"></script>
+	<script src="search.js"></script>-->
 	<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
 </body>

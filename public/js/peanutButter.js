@@ -9,7 +9,6 @@ $(document).ready(function(){
   });
 
   $('.song').click(function(e){
-    //TODO
     clickNav.bind(this)(e);
     //Hide all navLinks, show on click
     var songSelected = $(this).attr("id");
@@ -26,14 +25,31 @@ $(document).ready(function(){
     $($(this).attr('data-element')).show();
   }
 
-  $('#search').submit(function(e) {
-    //e.preventDefault();
-    //e.stopPropagation();
+  $('#submit').click(function(e){
     // useless go to the lowest context where searchTerm is defined --> global
-    var searchTerm = $(this).children("input").val();
-    console.log(searchTerm);
+    //var searchTerm = $(this).children("input").val();
+    var searchTerm = document.getElementById("inputSong").value;
     //getYoutube(searchTerm);
-  })
+    // Writing a string matcher to go through the json data file and find
+    // the song that matches the input
+    var foundSong = false;
+
+    $.getJSON('apitesting/data.json', function(data){
+
+      for(i = 0; i < (data.songs).length; i++){
+        if(searchTerm.localeCompare(data.songs[i].name) == 0){
+          renderSong(i);
+          foundSong = true;
+          $('#notFound').hide();
+        }
+      }
+      // Checks to see if song was found
+      if(!foundSong){
+        $('#notFound').show();
+      }
+
+    }); //End of json get request
+  }); //End of search function
 
   // function getYoutube (searchTerm) {
   //   var params = {
