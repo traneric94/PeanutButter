@@ -55,7 +55,12 @@ body {
   color: white;
   font-size: 18;
 }
-#currentlyPlaying, .lyricTitle {
+#songInformation {
+  font-size: 18;
+  line-height: 1.6;
+  color: white;
+}
+#currentlyPlaying, #songInformation, .lyricTitle {
   color: white;
   padding-left: 7px;
   padding-top: 5px;
