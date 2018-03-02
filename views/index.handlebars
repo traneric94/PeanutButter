@@ -22,8 +22,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	{{#if viewAlt}} <!--TEST for A8 A/B TESTING-->
+	<link rel="stylesheet" href="/css/peanutButterA.css">
+	{{else}}
 	<link rel="stylesheet" href="/css/peanutButterB.css">
-
+	{{/if}}
 </head>
 
 <body>
@@ -36,10 +39,15 @@
   <nav class="container navbar navbar-default purple">
         <a class="navbar-brand"><img class="picture img-fluid" id="logo" src="https://i.imgur.com/f6v1LWI.jpg">
         </a>
-				<div class='jumbo'>
-        	<h1 id="jumboTitle">Peanut  Butter</h1>
-					<h4 id="jumboDescription">...because it's the jam</h4>
-				</div>
+				{{#if viewAlt}} <!--TEST for A8 A/B TESTING-->
+				<h1 id="jumboTitle">Peanut  Butter</h1>
+				<h4 id="jumboDescription">...because it's the jam</h4>
+				{{else}}
+					<div class='jumbo'>
+						<h1 id="jumboTitle">Peanut  Butter</h1>
+						<h4 id="jumboDescription">...because it's the jam</h4>
+					</div>
+				{{/if}}
 
 				{{#if viewAlt}} <!--TEST for A8 A/B TESTING-->
 				{{else}}
