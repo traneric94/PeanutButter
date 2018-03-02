@@ -3,20 +3,17 @@
 }
 body {
 
-  /*background: #fff2cc !important;*/
-  /*background: #f4e6d7 !important;*/
+  /*background: #FFF1A3 !important;*/
   background-image: url("https://images.unsplash.com/photo-1468164016595-6108e4c60c8b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e3df374e72a1172cd928719eff2ba25&auto=format&fit=crop&w=1500&q=80") !important;
-  /*background-image: url('https://images.unsplash.com/photo-1483954743958-e7db4da5b8d5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63c27d72bf657074b36c2398fb7c4f97&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb');*/
-  /*background-size: cover;*/
+  background-size: cover;
   background-attachment: fixed;
   padding-bottom: 120px;
 }
 
 .navBottom {
-  padding-left: 25px;
+  padding-left: 5px;
   padding-right: 5px;
-  padding-bottom: 10px;
-  /*color: white !important;*/
+  padding-bottom: 5px;
 }
 
 
@@ -39,9 +36,12 @@ body {
                0px 8px 13px rgba(0,0,0,0.1),
                0px 18px 23px rgba(0,0,0,0.1);*/
 }
+/*.row .navBottom {
+  color: white;
+}*/
 
 
-#searching, #searchingDetail, #signout, #welcome, .lyricTitle {
+#searching, #signout, .lyricTitle {
   color: white;
 }
 #signout {
@@ -58,7 +58,7 @@ body {
 #songInformation {
   font-size: 18;
   line-height: 1.6;
-  /*color: white;*/
+  color: white;
 }
 #currentlyPlaying, #songInformation, .lyricTitle {
   color: white;
@@ -75,17 +75,16 @@ html {
     font-family: 'Lato', sans-serif;
 }
 .purple {
-  /*background: #DAA520 !important;*/
-  background-image: url("https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=20350f2b60dc7d7ac4b5e9526afacf77&auto=format&fit=crop&w=1500&q=80") !important;
-  background-size: cover;
-  /*background-attachment: fixed;*/
+  /*background: #9B59B6 !important;*/
+  /*background: #B5A4CC !important;*/
+  /*background: #E6E6FA !important;*/
+  background: #DAA520 !important;
   height: 150px !important;
 }
 
 
 .navbar-nav .container {
   background: #E6E6FA !important;
-  /*background: #3A2A61 !important;*/
 }
 .picture {
   height: 100px !important;
@@ -104,18 +103,16 @@ html {
 }
 
 .nav {
-    background-color: #3A2A61;
+    /*background-color: #2C3E50;*/
+    /*background-color: #739ACC;*/
+    background-color: #800000;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 10%;
     margin:0 !important;
+    /*margin-top: 100px;*/
 
 }
-.row .navBottom {
-  padding: 100px !important;
-}
-
 
 .currentlyPlaying {
 	position: fixed;
@@ -189,9 +186,6 @@ img {
   font-family: 'Lato', sans-serif;
 }
 
-h5, h5{
-  display: inline;
-}
 
 
 /*.navbar-nav {
@@ -201,4 +195,5 @@ h5, h5{
 /*#signin {
   position:
 }
-*/
+#signout {
+}*/
