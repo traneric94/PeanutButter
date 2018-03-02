@@ -65,9 +65,6 @@ $(document).ready(function(){
   //   };
   //   buildApiRequest('GET', '/youtube/v3/search', params);
   // }
-  $('#logo').click(function(e){
-
-  });
 });
 
 
@@ -113,6 +110,7 @@ $(document).ready(function(){
       $('.jumbo').hide();
       //Show currently playing elements
       $('.currentlyP').show();
+      // $('#currentlyPlaying').append(data.songs[songId].name);
       $('.lyricTitle').text(data.songs[songId].name);
   });
 
