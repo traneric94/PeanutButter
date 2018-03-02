@@ -81,7 +81,18 @@ $(document).ready(function(){
       });
   }
   function readyToPlay(event) {
-    event.target.playVideo();
+    //event.target.playVideo();
+
+    // Script for play and pause buttons
+    var playButton = document.getElementById("play-button");
+    playButton.addEventListener("click", function() {
+      player.playVideo();
+    });
+
+    var pauseButton = document.getElementById("pause-button");
+    pauseButton.addEventListener("click", function() {
+      player.pauseVideo();
+    });
   }
 
   //Update Script
@@ -91,11 +102,15 @@ $(document).ready(function(){
       var chordsDirectory = "/apitesting/";
       chordsDirectory = chordsDirectory.concat(data.songs[songId].chords);
       $('#songChords').load(chordsDirectory);
-      $('.lyricTitle').text(data.songs[songId].name);
       $('#songInformation').html(nl2br(data.songs[songId].info));
       $('#lyricText').html(nl2br((data.songs[songId].lyrics)));
-      $('#videoPlayer').prop("src", data.songs[songId].videoURL);
+      $('#videoPlayer').prop("src", data.songs[songId].videoURL + '?enablejsapi=1');
       $('#songImages').attr("src", data.songs[songId].albumArt);
+      //Hide jumbo elements
+      $('.jumbo').hide();
+      //Show currently playing elements
+      $('.currentlyP').show();
+      $('.lyricTitle').text(data.songs[songId].name);
   });
 
     //Changes lyric format to html appropriate format (takes all newlines in javascript language and changes them to html language <br> breaks)

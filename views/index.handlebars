@@ -28,8 +28,21 @@
   <nav class="container navbar navbar-default purple">
         <a class="navbar-brand"><img class="picture img-fluid" src="https://i.imgur.com/f6v1LWI.jpg">
         </a>
-        <h1 id="jumboTitle">Peanut  Butter</h1>
-				<h4 id="jumboDescription">...because it's the jam</h4>
+				<div class='jumbo'>
+        	<h1 id="jumboTitle">Peanut  Butter</h1>
+					<h4 id="jumboDescription">...because it's the jam</h4>
+				</div>
+				<!--Currently playing text block-->
+				<div class='currentlyP'style="display: none;">
+					<h4 id ='currentlyPlaying' >Currently Playing: </h4>
+					<h4 class="lyricTitle"></h4>
+					<div class='row'>
+						<div class='pull-right'>
+							<button id='play-button' class="btn btn-default" type="submit">Play</button>
+							<button id='pause-button' class="btn btn-default" type="submit" style='margin-right:10px;'>Pause</button>
+						</div>
+					</div>`
+			</div>
   </nav>
 	<!--Login page tab-->
 	<div class='container'>
@@ -38,6 +51,10 @@
 		</div>
   </div>
 
+	<!--TEST-->
+	<div class ='container'>
+
+	</div>
 	<div class="navLink container" id='homeContent'>
 		<h3 id='welcome'></h3>
 		<!--Search bar -->
@@ -103,7 +120,7 @@
 		<h1 class="lyricTitle">Karaoke </h1>
 		<div class='video-container'>
 			<iframe id="videoPlayer"
-    		src="https://www.youtube.com/embed/J3_DL0q9oq4" frameborder="0"
+    		src="https://www.youtube.com/embed/J3_DL0q9oq4?enablejsapi=1" frameborder="0"
     		allow="autoplay; encrypted-media" allowfullscreen>
     	</iframe>
 	  </div>
@@ -150,12 +167,6 @@
 	  <!-- Navigation bar -->
 
   	<ul class="nav navbar-nav container">
-
-			<!--Currently playing text block-->
-
-			<h4 id ='currentlyPlaying'>Currently Playing: </h4>
-			<h4 class="lyricTitle"></h4>
-
 
 			<!-- <li><a href="#" data-element="#homeContent">Home</a></li>
 			<li><a href="#" data-element="#karaokeContent">Karaoke</a></li>
