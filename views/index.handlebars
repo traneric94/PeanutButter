@@ -1,5 +1,15 @@
 <html>
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114581555-1');
+	</script>
+
 	<title>Peanut Butter</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +21,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- test -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<link rel="stylesheet" href="/css/peanutButter.css">
 
@@ -23,6 +32,7 @@
 		<div id='signin' class="g-signin2" data-onsuccess="onSignIn" style='padding-top:10px;float:right;'></div>
 	</div>
 	<div class='container'><div id='signout' onclick="signOut();" style='float:right;'>Sign out</div></div>
+
   <nav class="container navbar navbar-default purple">
         <a class="navbar-brand"><img class="picture img-fluid" src="https://i.imgur.com/f6v1LWI.jpg">
         </a>
@@ -46,12 +56,8 @@
 	<!--Login page tab-->
 	<div class='container'>
 		<div id='loginPage'>
-
 		</div>
   </div>
-
-	<!--TEST-->
-	<div class ='container'>
 
 	</div>
 	<div class="navLink container" id='homeContent'>
