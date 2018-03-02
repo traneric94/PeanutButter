@@ -39,9 +39,6 @@ body {
                0px 8px 13px rgba(0,0,0,0.1),
                0px 18px 23px rgba(0,0,0,0.1);*/
 }
-/*.row .navBottom {
-  color: white;
-}*/
 
 
 #searching, #searchingDetail, #signout, #welcome, .lyricTitle {
@@ -112,7 +109,6 @@ html {
     bottom: 0;
     width: 100%;
     margin:0 !important;
-
 
     /*margin-top: 100px;*/
 
@@ -199,6 +195,4 @@ img {
 /*#signin {
   position:
 }
-#signout {
-
-}*/
+*/
