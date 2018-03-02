@@ -40,6 +40,9 @@
         	<h1 id="jumboTitle">Peanut  Butter</h1>
 					<h4 id="jumboDescription">...because it's the jam</h4>
 				</div>
+
+				{{#if viewAlt}} <!--TEST for A8 A/B TESTING-->
+				{{else}}
 				<!--Currently playing text block-->
 				<div class='currentlyP'style="display: none;">
 					<h4 id ='currentlyPlaying' >Currently Playing: </h4>
@@ -50,7 +53,8 @@
 							<button id='pause-button' class="btn btn-default" type="submit" style='margin-right:10px;'>Pause</button>
 						</div>
 					</div>`
-			</div>
+			  </div>
+			  {{/if}}
   </nav>
 
 	<!--Login page tab-->
@@ -59,7 +63,7 @@
 		</div>
   </div>
 
-	</div>
+	<!--</div>-->
 	<div class="navLink container" id='homeContent'>
 		<h3 id='welcome'></h3>
 		<!--Search bar -->
@@ -171,13 +175,12 @@
 	</div>
 
 	  <!-- Navigation bar -->
-
   	<ul class="nav navbar-nav  container">
-
+			{{#if viewAlt}}  <!--TEST FOR A8 A/B TESTING-->
 			<!--Currently playing text block-->
 			<h5 id ='currentlyPlaying'>Currently Playing:</h5>
 			<h4 class="lyricTitle"></h4>
-
+			{{/if}}
 
 			<div class="row navBottom">
       <div class="col-xs-2"<li><a href="#" data-element="#homeContent">Home </a></li></div>
