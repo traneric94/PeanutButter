@@ -8,14 +8,12 @@
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
-
-	<link rel="stylesheet" href="/css/peanutButter.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- test -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+	<link rel="stylesheet" href="/css/peanutButter.css">
 
 </head>
 
@@ -44,6 +42,7 @@
 					</div>`
 			</div>
   </nav>
+
 	<!--Login page tab-->
 	<div class='container'>
 		<div id='loginPage'>
@@ -97,10 +96,11 @@
 
 		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}"><span class="glyphicon glyphicon-menu-right"></span>{{name}}</a>
 		                </h4>
+										<h5>{{artist}}</h5>
 		            </div>
 		            <div id=collapse{{songId}} class="panel-collapse collapse">
 		                <div class="panel-body">
-		                    <p><strong>{{album}}</strong></p>
+		                    <p><strong>Album:  {{album}}</strong></p>
 		                    <ul>
 													<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
 													<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
@@ -179,7 +179,7 @@
       <div class="col-xs-2"<li><a href="#" data-element="#karaokeContent">Karaoke</a></li></div>
       <div class="col-xs-2"<li><a href="#" data-element="#lyricsContent">Lyrics</a></li></div>
       <div class="col-xs-2"<li><a href="#" data-element="#chordsContent">Chords</a></li></div>
-      <div class="col-xs-2"<li><a href="#" data-element="#infoContent">Song Info</a></li></div>
+      <div class="col-xs-3"<li><a href="#" data-element="#infoContent">Song Info</a></li></div>
       <!-- <div class="col-xs-2"<li><a href="#" data-element="#favoriteContent">Favorites</a></li></div> -->
 
     </div>
