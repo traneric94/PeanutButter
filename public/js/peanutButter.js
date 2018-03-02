@@ -48,7 +48,7 @@ $(document).ready(function(){
       }
       // Checks to see if song was found
       if(!foundSong){
-        $('#Searching').text("Song Not Available");
+        $('#Searching').text("Sorry, Song Not Available.");
         $('#searchingDetail').text("Check spelling or browse library")
       }
 
@@ -65,6 +65,9 @@ $(document).ready(function(){
   //   };
   //   buildApiRequest('GET', '/youtube/v3/search', params);
   // }
+  $('#logo').click(function(e){
+
+  });
 });
 
 
@@ -138,7 +141,7 @@ $(document).ready(function(){
 /*Script for authentication*/
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  $('#welcome').html("Welcome back " + profile.getGivenName());
+  $('#welcome').html("Welcome back, " + profile.getGivenName());
 
 }
 
