@@ -29,7 +29,7 @@ $(document).ready(function(){
     // useless go to the lowest context where searchTerm is defined --> global
     //var searchTerm = $(this).children("input").val();
     var searchTerm = document.getElementById("inputSong").value;
-    //getYoutube(searchTerm);
+    searchTerm = searchCleaner(searchTerm);
     // Writing a string matcher to go through the json data file and find
     // the song that matches the input
     var foundSong = false;
@@ -37,7 +37,8 @@ $(document).ready(function(){
     $.getJSON('apitesting/data.json', function(data){
 
       for(i = 0; i < (data.songs).length; i++){
-        if(searchTerm.localeCompare(data.songs[i].name) == 0){
+        var compare = searchCleaner(data.songs[i].name);
+        if(searchTerm.localeCompare(compare) == 0){
           renderSong(i);
           foundSong = true;
           $('#notFound').hide();
@@ -135,6 +136,17 @@ $(document).ready(function(){
       $(this).parent().find(".glyphicon").removeClass("rotate");
     });
 });
+
+function searchCleaner(string) {
+  var cleaned = removeSpecialChar(string);
+  return cleaned.toLowerCase();
+}
+
+function removeSpecialChar(string) {
+  var rval = string.replace(/[<>\'\s]/gi, '');
+  return rval;
+
+}
 
 /*Script for authentication*/
 function onSignIn(googleUser) {
