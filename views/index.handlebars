@@ -2,7 +2,23 @@
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
+	<!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='170271774-1',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
+
 	<script>
+
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
   		gtag('js', new Date());
@@ -58,7 +74,7 @@
 							<button id='play-button' class="btn btn-default" type="submit">Play</button>
 							<button id='pause-button' class="btn btn-default" type="submit" style='margin-right:10px;'>Pause</button>
 						</div>
-					</div>`
+					</div>
 			  </div>
 			  {{/if}}
   </nav>
@@ -183,9 +199,21 @@
 	  <!-- Navigation bar -->
   	<ul class="nav navbar-nav  container">
 			{{#if viewAlt}}  <!--TEST FOR A8 A/B TESTING-->
-			<!--Currently playing text block-->
-			<h5 id ='currentlyPlaying'>Currently Playing:</h5>
-			<h5 class="lyricTitle"></h5>
+				<div class='row'>
+					<div class='col-xs-6'>
+						<!--Currently playing text block-->
+						<h5 id ='currentlyPlaying'>Currently Playing:</h5>
+						<h5 class="lyricTitle"></h5>
+					</div>
+					<div class='col-xs-6'>
+						<div class='currentlyP'style="display: none;">
+							<div class='pull-right'>
+								<button id='play-button' class="btn btn-default" type="submit" style='margin-top:20px;'>Play</button>
+								<button id='pause-button' class="btn btn-default" type="submit" style='margin-right:10px; margin-top:20px;'>Pause</button>
+							</div>
+						</div>
+				</div>
+			</div>
 			{{/if}}
 
 			<div class="row navBottom">
@@ -204,7 +232,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script type="text/javascript" src='/js/peanutButter.js'></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
 </body>

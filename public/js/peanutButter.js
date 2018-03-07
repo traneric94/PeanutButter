@@ -83,16 +83,19 @@ $(document).ready(function(){
   }
   function readyToPlay(event) {
     //event.target.playVideo();
-
     // Script for play and pause buttons
     var playButton = document.getElementById("play-button");
     playButton.addEventListener("click", function() {
       player.playVideo();
+      ga('create', 'UA-114581555-1', 'auto');
+      ga("send", "event", 'play_pause', 'click');
     });
 
     var pauseButton = document.getElementById("pause-button");
     pauseButton.addEventListener("click", function() {
       player.pauseVideo();
+      ga('create', 'UA-114581555-1', 'auto');
+      ga("send", "event", 'play_pause', 'click');
     });
   }
 
