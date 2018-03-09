@@ -1,7 +1,5 @@
 <html>
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
 	<!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
 k='170271774-1',d=document,l=d.location,c=d.cookie;
@@ -16,7 +14,8 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 </script><script>utmx('url','A/B');</script>
 <!-- End of Google Analytics Content Experiment code -->
-
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
 	<script>
 
   		window.dataLayer = window.dataLayer || [];
@@ -36,11 +35,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	{{#if viewAlt}} <!--TEST for A8 A/B TESTING-->
 	<link rel="stylesheet" href="/css/peanutButterA.css">
-	{{else}}
-	<link rel="stylesheet" href="/css/peanutButterB.css">
-	{{/if}}
 </head>
 
 <body>
@@ -50,35 +45,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	</div>
 	<div class='container'><div id='signout' onclick="signOut();" style='float:right;'>Sign out</div></div>
 
-  <nav class="container navbar navbar-default purple">
-        <a class="navbar-brand"><img class="picture img-fluid" id="logo" src="https://i.imgur.com/f6v1LWI.jpg">
-        </a>
-				{{#if viewAlt}} <!--TEST for A8 A/B TESTING-->
-				<h1 id="jumboTitle">Peanut  Butter</h1>
-				<h4 id="jumboDescription">...because it's the jam</h4>
-				{{else}}
-					<div class='jumbo'>
-						<h1 id="jumboTitle">Peanut  Butter</h1>
-						<h4 id="jumboDescription">...because it's the jam</h4>
-					</div>
-				{{/if}}
-
-				{{#if viewAlt}} <!--TEST for A8 A/B TESTING-->
-				{{else}}
-				<!--Currently playing text block-->
-				<div class='currentlyP'style="display: none;">
-					<h4 id ='currentlyPlaying' >Currently Playing: </h4>
-					<h4 class="lyricTitle"></h4>
-					<div class='row'>
-						<div class='pull-right'>
-							<button id='play-button' class="btn btn-default" type="submit">Play</button>
-							<button id='pause-button' class="btn btn-default" type="submit" style='margin-right:10px;'>Pause</button>
-						</div>
-					</div>
-			  </div>
-			  {{/if}}
-  </nav>
-
+	<div class='jumbo'>
+	  <nav class="container navbar navbar-default purple">
+	        <a class="navbar-brand"><img class="picture img-fluid" id="logo" src="https://i.imgur.com/f6v1LWI.jpg">
+	        </a>
+							<h1 id="jumboTitle">Peanut  Butter</h1>
+							<h4 id="jumboDescription">...because it's the jam</h4>
+	  </nav>
+  </div>
 	<!--Login page tab-->
 	<div class='container'>
 		<div id='loginPage'>
@@ -197,8 +171,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	</div>
 
 	  <!-- Navigation bar -->
-  	<ul class="nav navbar-nav  container">
-			{{#if viewAlt}}  <!--TEST FOR A8 A/B TESTING-->
+  	<ul class="nav navbar-nav container">
 				<div class='row'>
 					<div class='col-xs-6'>
 						<!--Currently playing text block-->
@@ -214,7 +187,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 						</div>
 				</div>
 			</div>
-			{{/if}}
 
 			<div class="row navBottom">
       <div class="col-xs-2"<li><a href="#" data-element="#homeContent">Home </a></li></div>
