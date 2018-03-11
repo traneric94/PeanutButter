@@ -1,33 +1,36 @@
 <html>
 <head>
 	<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='170271774-1',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
-	<script>
 
+	<!-- <script>function utmx_section(){}function utmx(){}(function(){var
+	k='170271774-1',d=document,l=d.location,c=d.cookie;
+	if(l.search.indexOf('utm_expid='+k)>0)return;
+	function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+	indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+	length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+	'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+	'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+	'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+	valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+	</script><script>utmx('url','A/B');</script> -->
+
+	<!-- End of Google Analytics Content Experiment code -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
+
+	<script>
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
-		gtag('config', 'UA-114581555-1');
+  		gtag("js", new Date());
+		gtag("config", "UA-114581555-1");
 	</script>
 
 	<title>Peanut Butter</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-signin-client_id" content='1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com'>
+	<meta name="google-signin-client_id" content="1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com">
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
@@ -35,43 +38,38 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<link rel="stylesheet" href="/css/peanutButterA.css">
+	<link rel="stylesheet" href="/css/peanutButter.css">
 </head>
 
 <body>
- 	<div class='container'>
-		<!--Google login-->
-		<div id='signin' class="g-signin2" data-onsuccess="onSignIn" style='padding-top:10px;float:right;'></div>
-	</div>
-	<div class='container'><div id='signout' onclick="signOut();" style='float:right;'>Sign out</div></div>
-
-	<div class='jumbo'>
-	  <nav class="container navbar navbar-default purple">
-	        <a class="navbar-brand"><img class="picture img-fluid" id="logo" src="https://i.imgur.com/f6v1LWI.jpg">
+	<!-- Header -->
+	<div class="jumbo">
+	  <nav class="container navbar navbar-default banner">
+	  		<div id="signout" onclick="signOut();" style='float:right;'>Sign out</div>
+			<div id="signin" class="g-signin2" data-onsuccess="onSignIn" style="float:right;">Sign in</div>
+	        <a class="navbar-brand">
+	        	<img class="picture img-fluid" id="logo" src="https://i.imgur.com/f6v1LWI.jpg">
 	        </a>
-							<h1 id="jumboTitle">Peanut  Butter</h1>
-							<h4 id="jumboDescription">...because it's the jam</h4>
+			<h2 class="text shadow-text" id="jumboTitle">Peanut Butter</h2>
+			<h4 class="text shadow-text" id="jumboDescription">It's The Jam</h4>
 	  </nav>
-  </div>
-	<!--Login page tab-->
-	<div class='container'>
-		<div id='loginPage'>
-		</div>
-  </div>
+ 	</div>
 
-	<!--</div>-->
+	<!--Login page tab-->
+	<div id="loginPage"></div>
+ 
 	<div class="navLink container" id='homeContent'>
-		<h3 id='welcome'></h3>
+		<h3 class="text" id='welcome'></h3>
 		<!--Search bar -->
 		<div class="container">
 			<div class="row">
 	        <div class="col-sm-6 col-sm-offset-3">
 	            <div id="imaginary_container">
-	                <div class="input-group stylish-input-group ">
-												<input type="text" class="form-control" placeholder="Search for a SONG" name="search" id='inputSong'>
+	                <div class="input-group stylish-input-group">
+						<input type="text" class="form-control" placeholder="Search for a SONG" name="search" id="inputSong">
 	                    <span class="input-group-addon">
 	                        <button type="submit" id ='submit'>
-	                            <span class="glyphicon glyphicon-search"></span>
+	                        	<span class="glyphicon glyphicon-search"></span>
 	                        </button>
 	                    </span>
 	                </div>
@@ -82,14 +80,9 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 		<!--This feature is displayed when someone enters in a search in the search
 				bar that is not found in the Json data-->
-		<div class='container'>
-				<div id='notFound' style="display: none;">
-				</div>
-		</div>
-
 		<!--Recent bar-->
-	  <div class="container">
-					<h3 id="Searching">Recent Searches</h3>
+	  <div class="container text">
+					<h3 id="Searching">Song Library</h3>
 					<h4 id="searchingDetail"></h4>
 		</div>
 		<!--Beginning of accordion widgets-->
@@ -99,52 +92,54 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 		        <div class="panel panel-default"> <!-- Start of element -->
 		            <div class="panel-heading">
 		            	<h4 class="panel-title">
-
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}"><span class="glyphicon glyphicon-menu-right"></span>{{name}}</a>
+		            		<a data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}">{{name}}</a>
 		                </h4>
-										<h5>{{artist}}</h5>
+						<h5>{{artist}}</h5>
 		            </div>
+
 		            <div id=collapse{{songId}} class="panel-collapse collapse">
 		                <div class="panel-body">
-		                    <p><strong>Album:  {{album}}</strong></p>
+		                    <p><strong>Album: {{album}}</strong></p>
 		                    <ul>
-													<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
-		              			</ul>
+								<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
+								<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
+								<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
+								<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
+		              		</ul>
 		                </div>
 		            </div>
 		        </div> <!-- End of element-->
 		        {{/each}}
 		    </div>
 		</div> <!--End of accordion widgets-->
-
 	</div> <!--End of homepage-->
 
- 	<div class="navLink container" id='karaokeContent' style="display: none;">
-		<h1 class="lyricTitle">Karaoke </h1>
+ 	<div class="navLink container" id='karaokeContent' style="display: none">
+		<h1 class="lyricTitle text">Karaoke</h1>
 		<div class='video-container'>
 			<iframe id="videoPlayer"
-    		src="https://www.youtube.com/embed/J3_DL0q9oq4?enablejsapi=1" frameborder="0"
-    		allow="autoplay; encrypted-media" allowfullscreen>
-    	</iframe>
-	  </div>
+    			src="https://www.youtube.com/embed/J3_DL0q9oq4?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    		</iframe>
+		</div>
 	</div>
-	<div class="navLink container" id='lyricsContent' style="display: none;">
-		<h1 class="lyricTitle">Lyrics</h1>
-		<h6 id="lyricText" class="bottom-gap">No Song Currently Playing</h6>
+
+	<div class="navLink container" id='lyricsContent' style="display: none">
+		<h1 class="lyricTitle text">Lyrics</h1>
+		<h6 class="text" id="lyricText">No Song Currently Playing</h6>
 	</div>
-	<div class="navLink container" id='chordsContent' style="display: none;">
-		<h1 class="lyricTitle">Chords<h1>
-			<h6 id="songChords" class="bottom-gap">No Song Currently Playing</h6>
+
+	<div class="navLink container" id='chordsContent' style="display: none">
+		<h1 class="lyricTitle text">Chords<h1>
+			<h6 class="text" id="songChords">No Song Currently Playing</h6>
 	</div>
-	<div class="navLink container" id='infoContent' style="display: none;">
-		<h1 class="lyricTitle">Song Information</h1>
-			<a><img class="picture" id="songImages"></a>
-			<h6 id="songInformation" class="bottom-gap">No Song Currently Playing</h6>
+
+	<div class="navLink container" id='infoContent' style="display: none">
+		<h1 class="lyricTitle text">Song Information</h1>
+			<a><img class="picture" id="songImages" style="display: none"></a>
+			<h6 class="text" id="songInformation">No Song Currently Playing</h6>
 	</div>
-	<div class="navLink container" id='favoriteContent' style="display: none;">
+
+	<div class="navLink container" id='favoriteContent' style="display: none">
 		<h3>Favorites</h3>
 		<div class="accordionWidget">
 		    <div class="panel-group" id="accordion">
@@ -154,15 +149,16 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-menu-right"></span>Hips Don't Lie - Shakira</a>
 		                </h4>
 		            </div>
+		            
 		            <div id="collapseFive" class="panel-collapse collapse">
 		                <div class="panel-body">
 		                    <p><strong>Oral Fixation</strong></p>
 		                    <ul>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#karaokeContent">Karaoke</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#lyricsContent">Lyrics</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#chordsContent">Chords</a></li>
-													<li><a href="#" class='song' id="Hips Don't Lie" data-element="#infoContent">Song Info</a></li>
-		              			</ul>
+								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#karaokeContent">Karaoke</a></li>
+								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#lyricsContent">Lyrics</a></li>
+								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#chordsContent">Chords</a></li>
+								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#infoContent">Song Info</a></li>
+		              		</ul>
 		                </div>
 		            </div>
 		        </div>  <!--End of element-->
@@ -172,34 +168,20 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 	  <!-- Navigation bar -->
   	<ul class="nav navbar-nav container">
-				<div class='row'>
-					<div class='col-xs-6'>
-						<!--Currently playing text block-->
-						<h5 id ='currentlyPlaying'>Currently Playing:</h5>
-						<h5 class="lyricTitle"></h5>
-					</div>
-					<div class='col-xs-6'>
-						<div class='currentlyP'style="display: none;">
-							<div class='pull-right'>
-								<button id='play-button' class="btn btn-default" type="submit" style='margin-top:20px;'>Play</button>
-								<button id='pause-button' class="btn btn-default" type="submit" style='margin-right:10px; margin-top:20px;'>Pause</button>
-							</div>
-						</div>
-				</div>
-			</div>
+  		<!-- Currently Playing Banner -->
+		<div class='row currentlyPlaying' style="display: none; margin-left: 1em">
+			<h5 class="text col-xs-6" id="currentlyPlayingText"></h5>
+					<button id='pause-button' class="pull-right btn btn-default glyphicon glyphicon-pause" type="submit"> </button>
+					<button id='play-button' class="pull-right btn btn-default glyphicon glyphicon-play" type="submit"> </button>
+		</div>
 
-			<div class="row navBottom">
-      <div class="col-xs-2"<li><a href="#" data-element="#homeContent">Home </a></li></div>
-      <div class="col-xs-2"<li><a href="#" data-element="#karaokeContent">Karaoke </a></li></div>
-      <div class="col-xs-2"<li><a href="#" data-element="#lyricsContent">Lyrics </a></li></div>
-      <div class="col-xs-2"<li><a href="#" data-element="#chordsContent">Chords </a></li></div>
-      <div class="col-xs-3"<li><a href="#" data-element="#infoContent">Song Info </a></li></div>
+    	<a class="navElement" href="#" data-element="#homeContent">Home</a></li>
+    	<a class="navElement" href="#" data-element="#karaokeContent">Karaoke</a></li>
+    	<a class="navElement" href="#" data-element="#lyricsContent">Lyrics</a></li>
+    	<a class="navElement" href="#" data-element="#chordsContent">Chords</a></li>
+    	<a class="navElement" href="#" data-element="#infoContent">Song Info</a></li>
       <!-- <div class="col-xs-2"<li><a href="#" data-element="#favoriteContent">Favorites</a></li></div> -->
-
-    </div>
-		</ul>
-  </div>
-
+  </ul>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>

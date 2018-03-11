@@ -111,10 +111,11 @@ $(document).ready(function(){
       $('#videoPlayer').prop("src", data.songs[songId].videoURL + '?enablejsapi=1');
       $('#songImages').attr("src", data.songs[songId].albumArt);
       //Hide jumbo elements
-      $('.jumbo').hide();
+      //$('.jumbo').hide();
+
       //Show currently playing elements
-      $('.currentlyP').show();
-      // $('#currentlyPlaying').append(data.songs[songId].name);
+      $('.currentlyPlaying').show();
+      $("#currentlyPlayingText").text("Currently Playing: " + data.songs[songId].name + " - " + data.songs[songId].artist);
       $('.lyricTitle').text(data.songs[songId].name);
   });
 
@@ -123,7 +124,6 @@ $(document).ready(function(){
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
     return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
   }
-
 }
 
 /* Script for Accordion Widgets*/
