@@ -22,7 +22,9 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopPropagation();
     $('.navLink').hide();
+
     $($(this).attr('data-element')).show();
+
   }
 
   $('#submit').click(function(e){
@@ -33,6 +35,10 @@ $(document).ready(function(){
     // Writing a string matcher to go through the json data file and find
     // the song that matches the input
     var foundSong = false;
+
+    function searchCleaner(string) {
+      return string.toLowerCase().replace(/[<>\'\s]/gi, '');
+    }
 
     $.getJSON('apitesting/data.json', function(data){
 
@@ -86,17 +92,27 @@ $(document).ready(function(){
     // Script for play and pause buttons
     var playButton = document.getElementById("play-button");
     playButton.addEventListener("click", function() {
-      player.playVideo();
-      ga('create', 'UA-114581555-1', 'auto');
-      ga("send", "event", 'play_pause', 'click');
+      
+      if ($(this).attr("class").includes("glyphicon-play")) {
+        player.playVideo();
+        $(this).removeClass("glyphicon-play");
+        $(this).addClass("glyphicon-pause");
+      } else {
+        player.pauseVideo();
+        $(this).removeClass("glyphicon-pause");
+        $(this).addClass("glyphicon-play");
+      }
+      // ga('create', 'UA-114581555-1', 'auto');
+      // ga("send", "event", 'play_pause', 'click');
     });
 
-    var pauseButton = document.getElementById("pause-button");
-    pauseButton.addEventListener("click", function() {
-      player.pauseVideo();
-      ga('create', 'UA-114581555-1', 'auto');
-      ga("send", "event", 'play_pause', 'click');
-    });
+  //   var pauseButton = document.getElementById("pause-button");
+  //   pauseButton.addEventListener("click", function() {
+  //     
+
+  //     // ga('create', 'UA-114581555-1', 'auto');
+  //     // ga("send", "event", 'play_pause', 'click');
+  //   });
   }
 
   //Update Script
@@ -139,17 +155,6 @@ $(document).ready(function(){
       $(this).parent().find(".glyphicon").removeClass("rotate");
     });
 });
-
-function searchCleaner(string) {
-  var cleaned = removeSpecialChar(string);
-  return cleaned.toLowerCase();
-}
-
-function removeSpecialChar(string) {
-  var rval = string.replace(/[<>\'\s]/gi, '');
-  return rval;
-
-}
 
 /*Script for authentication*/
 function onSignIn(googleUser) {
