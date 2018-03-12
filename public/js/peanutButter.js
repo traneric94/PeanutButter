@@ -22,7 +22,6 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopPropagation();
     $('.navLink').hide();
-
     $($(this).attr('data-element')).show();
 
   }
@@ -48,8 +47,10 @@ $(document).ready(function(){
           renderSong(i);
           foundSong = true;
           $('#notFound').hide();
-          $('#Searching').text("Recent Searches");
+          // $('#Searching').text("Recent Searches");
           $('#searchingDetail').text("")
+          $('.navLink').hide();
+          $('#karaokeContent').show();
 
         }
       }
