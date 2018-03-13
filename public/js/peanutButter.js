@@ -93,7 +93,7 @@ $(document).ready(function(){
     // Script for play and pause buttons
     var playButton = document.getElementById("play-button");
     playButton.addEventListener("click", function() {
-      
+
       if ($(this).attr("class").includes("glyphicon-play")) {
         player.playVideo();
         $(this).removeClass("glyphicon-play");
@@ -109,7 +109,7 @@ $(document).ready(function(){
 
   //   var pauseButton = document.getElementById("pause-button");
   //   pauseButton.addEventListener("click", function() {
-  //     
+  //
 
   //     // ga('create', 'UA-114581555-1', 'auto');
   //     // ga("send", "event", 'play_pause', 'click');
@@ -161,7 +161,6 @@ $(document).ready(function(){
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   $('#welcome').html("Welcome back, " + profile.getGivenName());
-
 }
 
 /*Script for sign out*/

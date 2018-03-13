@@ -34,7 +34,8 @@
 	<meta name="google-signin-client_id" content="1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com">
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -52,14 +53,14 @@
 	        <a class="navbar-brand">
 	        	<img class="img-fluid" id="logo" src="https://i.imgur.com/f6v1LWI.jpg">
 	        </a>
-			<h2 class="text shadow-text" id="jumboTitle">Peanut Butter</h2>
-			<h4 class="text shadow-text" id="jumboDescription">It's The Jam</h4>
+			<h2 class="text shadow-text" id="jumboTitle"><strong>Peanut Butter</strong></h2>
+			<h5 class="text shadow-text" id="jumboDescription">It's The Jam.</h5>
 	  </nav>
  	</div>
 
 	<!--Login page tab-->
 	<div id="loginPage"></div>
- 
+
 	<div class="navLink container" id='homeContent'>
 		<h3 class="text" id='welcome'></h3>
 		<!--Search bar -->
@@ -84,7 +85,7 @@
 				bar that is not found in the Json data-->
 		<!--Recent bar-->
 	  <div class="container text">
-					<h3 id="Searching">Song Library</h3>
+					<h3 id="Searching">LIBRARY</h3>
 					<h4 id="searchingDetail"></h4>
 		</div>
 		<!--Beginning of accordion widgets-->
@@ -117,7 +118,7 @@
 	</div> <!--End of homepage-->
 
  	<div class="navLink container" id='karaokeContent' style="display: none">
-		<h1 class="lyricTitle text">Karaoke</h1>
+		<h1 class="lyricTitle text">KARAOKE</h1>
 		<div class='video-container'>
 			<iframe id="videoPlayer"
     			src="https://www.youtube.com/embed/J3_DL0q9oq4?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -126,17 +127,17 @@
 	</div>
 
 	<div class="navLink container" id='lyricsContent' style="display: none">
-		<h1 class="lyricTitle text">Lyrics</h1>
+		<h1 class="lyricTitle text">LYRICS</h1>
 		<h6 class="text" id="lyricText">No Song Currently Playing</h6>
 	</div>
 
 	<div class="navLink container" id='chordsContent' style="display: none">
-		<h1 class="lyricTitle text">Chords<h1>
+		<h1 class="lyricTitle text">CHORDS<h1>
 			<h6 class="text" id="songChords">No Song Currently Playing</h6>
 	</div>
 
 	<div class="navLink container" id='infoContent' style="display: none">
-		<h1 class="lyricTitle text">Song Information</h1>
+		<h1 class="lyricTitle text">SONG INFO</h1>
 			<a><img class="picture" id="songImages" style="display: none"></a>
 			<h6 class="text" id="songInformation">No Song Currently Playing</h6>
 	</div>
@@ -151,7 +152,7 @@
 		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-menu-right"></span>Hips Don't Lie - Shakira</a>
 		                </h4>
 		            </div>
-		            
+
 		            <div id="collapseFive" class="panel-collapse collapse">
 		                <div class="panel-body">
 		                    <p><strong>Oral Fixation</strong></p>
@@ -181,11 +182,11 @@
 
 		<div style="padding-top:.5em; padding-bottom: .5em">
 
-    	<a class="navElement" href="#" data-element="#homeContent">Home</a></li>
-    	<a class="navElement" href="#" data-element="#karaokeContent">Karaoke</a></li>
-    	<a class="navElement" href="#" data-element="#lyricsContent">Lyrics</a></li>
-    	<a class="navElement" href="#" data-element="#chordsContent">Chords</a></li>
-    	<a class="navElement" href="#" data-element="#infoContent">Song Info</a></li>
+    	<a class="navElement" href="#" data-element="#homeContent"><strong>Home</strong></a></li>
+    	<a class="navElement" href="#" data-element="#karaokeContent"><strong>Karaoke</strong></a></li>
+    	<a class="navElement" href="#" data-element="#lyricsContent"><strong>Lyrics</strong></a></li>
+    	<a class="navElement" href="#" data-element="#chordsContent"><strong>Chords</strong></a></li>
+    	<a class="navElement" href="#" data-element="#infoContent"><strong>Song Info</strong></a></li>
     	</div>
       <!-- <div class="col-xs-2"<li><a href="#" data-element="#favoriteContent">Favorites</a></li></div> -->
   </ul>
