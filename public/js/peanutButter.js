@@ -29,6 +29,8 @@ $(document).ready(function(){
   $('#submit').click(function(e){
     // useless go to the lowest context where searchTerm is defined --> global
     //var searchTerm = $(this).children("input").val();
+    e.preventDefault();
+    e.stopPropagation();
     var searchTerm = document.getElementById("inputSong").value;
     searchTerm = searchCleaner(searchTerm);
     // Writing a string matcher to go through the json data file and find
@@ -36,7 +38,7 @@ $(document).ready(function(){
     var foundSong = false;
 
     function searchCleaner(string) {
-      return string.toLowerCase().replace(/[<>\'\s]/gi, '');
+      return string.toLowerCase().replace(/[<>#!$%^&*(),.\[\]\"@\'\s]/gi, '');
     }
 
     $.getJSON('apitesting/data.json', function(data){
@@ -93,27 +95,17 @@ $(document).ready(function(){
     // Script for play and pause buttons
     var playButton = document.getElementById("play-button");
     playButton.addEventListener("click", function() {
-
-      if ($(this).attr("class").includes("glyphicon-play")) {
         player.playVideo();
-        $(this).removeClass("glyphicon-play");
-        $(this).addClass("glyphicon-pause");
-      } else {
-        player.pauseVideo();
-        $(this).removeClass("glyphicon-pause");
-        $(this).addClass("glyphicon-play");
-      }
       // ga('create', 'UA-114581555-1', 'auto');
       // ga("send", "event", 'play_pause', 'click');
     });
 
-  //   var pauseButton = document.getElementById("pause-button");
-  //   pauseButton.addEventListener("click", function() {
-  //
-
-  //     // ga('create', 'UA-114581555-1', 'auto');
-  //     // ga("send", "event", 'play_pause', 'click');
-  //   });
+    var pauseButton = document.getElementById("pause-button");
+    pauseButton.addEventListener("click", function() {
+       player.pauseVideo();
+      // ga('create', 'UA-114581555-1', 'auto');
+      // ga("send", "event", 'play_pause', 'click');
+    });
   }
 
   //Update Script

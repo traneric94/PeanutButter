@@ -81,7 +81,7 @@ html {
 
 /* Style for accordion wigets */
 .accordionWidget{
-  margin: 1em;
+  /*margin: 1em;*/
 }
 .rotate{
 -webkit-transform: rotate(90deg);  /* Chrome, Safari, Opera */
@@ -108,13 +108,19 @@ html {
 	height:100%;
 }
 
-img {
-    width: 100% !important;/* you can use % */
-    height: auto !important;
+.banner img {
+    width: 100%;/* you can use % */
+    height: auto;
 }
 
 * {
   font-family: 'Quicksand', sans-serif;
+}
+
+.albumArt {
+  width: 10%;
+  /*width : 100%;*/
+
 }
 
 #currentlyPlayingText {
@@ -152,3 +158,9 @@ img {
  h1 {
   font-size: 3em;
  }
+
+ /*Bootstrap overide*/
+.panel-group .panel+.panel {
+  margin-top: 0;
+}
+

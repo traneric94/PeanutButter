@@ -54,8 +54,8 @@
 	        </a>
 			<h2 class="text shadow-text" id="jumboTitle"><strong>Peanut Butter</strong></h2>
 			
-			<div id="signin" class="g-signin2 text" data-onsuccess="onSignIn" style="float:right; display: inline;">Sign in</div>
-			<h5 class="text shadow-text" id="jumboDescription" style="float:right; display: inline; margin-right: 1em;">It's The Jam</h5>
+			<span id="signin" class="g-signin2 text" data-onsuccess="onSignIn" style="float:right">Sign in</span>
+			<span><h5 class="text shadow-text" id="jumboDescription" style="float:right; margin-right: 1em;">It's The Jam</h5></span>
 	  </nav>
  	</div>
 
@@ -68,16 +68,14 @@
 		<div class="container">
 			<div class="row">
 	        <div class="col-sm-6 col-sm-offset-3">
-	            <div id="imaginary_container">
+	            <form id="imaginary_container">
 	                <div class="input-group stylish-input-group">
 						<input type="text" class="form-control" placeholder="Search for a SONG" name="search" id="inputSong">
 	                    <span class="input-group-addon">
-	                        <button type="submit" id ='submit'>
-	                        	<span class="glyphicon glyphicon-search"></span>
-	                        </button>
+	                        <button class="glyphicon glyphicon-search" type="submit" id ='submit'> </button>
 	                    </span>
 	                </div>
-	            </div>
+	            </form>
 	        </div>
 		  </div>
 	  </div>
@@ -95,12 +93,13 @@
 		    	{{#each songs}}
 		        <div class="panel panel-default"> <!-- Start of element -->
 		            <div class="panel-heading">
+		            	<span data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}">
 		            	<h4 class="panel-title">
-		            		<a data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}">{{name}}</a>
+		            		<img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}">
+		            		<strong>{{name}} - {{artist}}</strong>
+		                	</span>
 		                </h4>
-						<h5>{{artist}}</h5>
 		            </div>
-
 		            <div id=collapse{{songId}} class="panel-collapse collapse">
 		                <div class="panel-body">
 		                    <p><strong>Album: {{album}}</strong></p>
