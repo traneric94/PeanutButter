@@ -18,14 +18,14 @@
 	<!-- End of Google Analytics Content Experiment code -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script> -->
 
-	<script>
+<!-- 	<script>
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
   		gtag("js", new Date());
 		gtag("config", "UA-114581555-1");
-	</script>
+	</script> -->
 
 	<title>Peanut Butter</title>
 
@@ -48,13 +48,14 @@
 	<!-- Header -->
 	<div class="jumbo">
 	  <nav class="container navbar navbar-default banner">
-	  		<div id="signout" onclick="signOut();" style='float:right;'>Sign out</div>
-			<div id="signin" class="g-signin2" data-onsuccess="onSignIn" style="float:right;">Sign in</div>
+	  		<!-- <div id="signout" onclick="signOut();" style='float:right;'>Sign out</div> -->
 	        <a class="navbar-brand">
-	        	<img class="img-fluid" id="logo" src="https://i.imgur.com/f6v1LWI.jpg">
+	        	<img class="img-fluid" id="logo" src="https://imgur.com/G142hN8.png">
 	        </a>
 			<h2 class="text shadow-text" id="jumboTitle"><strong>Peanut Butter</strong></h2>
-			<h5 class="text shadow-text" id="jumboDescription">It's The Jam.</h5>
+			
+			<div id="signin" class="g-signin2 text" data-onsuccess="onSignIn" style="float:right; display: inline;">Sign in</div>
+			<h5 class="text shadow-text" id="jumboDescription" style="float:right; display: inline; margin-right: 1em;">It's The Jam</h5>
 	  </nav>
  	</div>
 
@@ -128,18 +129,18 @@
 
 	<div class="navLink container" id='lyricsContent' style="display: none">
 		<h1 class="lyricTitle text">LYRICS</h1>
-		<h6 class="text" id="lyricText">No Song Currently Playing</h6>
+		<h4 class="text" id="lyricText">No Song Currently Playing</h4>
 	</div>
 
 	<div class="navLink container" id='chordsContent' style="display: none">
-		<h1 class="lyricTitle text">CHORDS<h1>
-			<h6 class="text" id="songChords">No Song Currently Playing</h6>
+		<h1 class="lyricTitle text">CHORDS</h1>
+		<h4 class="text" id="songChords">No Song Currently Playing</h4>
 	</div>
 
 	<div class="navLink container" id='infoContent' style="display: none">
 		<h1 class="lyricTitle text">SONG INFO</h1>
 			<a><img class="picture" id="songImages" style="display: none"></a>
-			<h6 class="text" id="songInformation">No Song Currently Playing</h6>
+			<h4 class="text" id="songInformation">No Song Currently Playing</h4>
 	</div>
 
 	<div class="navLink container" id='favoriteContent' style="display: none">
@@ -174,19 +175,19 @@
   		<!-- Currently Playing Banner -->
 		<div class='row currentlyPlaying' style="display: none; margin-left: 1em">
 			<h5 class="border-dark text col-xs-6" id="currentlyPlayingText"></h5>
-					<!-- <button id='pause-button' class="pull-right btn btn-default glyphicon glyphicon-pause" type="submit"> </button> -->
+					<button id='pause-button' class="pull-right btn btn-default glyphicon glyphicon-pause" type="submit"> </button>
 					<button id='play-button' class="pull-right btn btn-default glyphicon glyphicon-play" type="submit"> </button>
 		</div>
 
-		<hr style="padding:0; margin:0; border-color:black;">
+		<hr style="padding:0; margin:0; border-color:white; width:120%;">
 
 		<div style="padding-top:.5em; padding-bottom: .5em">
 
-    	<a class="navElement" href="#" data-element="#homeContent"><strong>Home</strong></a></li>
-    	<a class="navElement" href="#" data-element="#karaokeContent"><strong>Karaoke</strong></a></li>
-    	<a class="navElement" href="#" data-element="#lyricsContent"><strong>Lyrics</strong></a></li>
-    	<a class="navElement" href="#" data-element="#chordsContent"><strong>Chords</strong></a></li>
-    	<a class="navElement" href="#" data-element="#infoContent"><strong>Song Info</strong></a></li>
+    	<a class="navElement" href="#" data-element="#homeContent">Home</a></li>
+    	<a class="navElement" href="#" data-element="#karaokeContent">Karaoke</a></li>
+    	<a class="navElement" href="#" data-element="#lyricsContent">Lyrics</a></li>
+    	<a class="navElement" href="#" data-element="#chordsContent">Chords</a></li>
+    	<a class="navElement" href="#" data-element="#infoContent">Song Info</a></li>
     	</div>
       <!-- <div class="col-xs-2"<li><a href="#" data-element="#favoriteContent">Favorites</a></li></div> -->
   </ul>
