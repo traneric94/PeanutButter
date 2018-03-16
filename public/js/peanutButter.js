@@ -163,3 +163,18 @@ function signOut() {
     $('#welcome').html("");
   });
 }
+
+ var socket = io.connect('http://localhost:3000');
+
+    // When users join, master sends Hello
+    socket.on('connect', function(data) {
+      //Sends to server
+        socket.emit('join', 'New client joined');
+    });
+    // 
+    socket.on('messages', function(data) {
+      alert(data);
+    })
+    socket.on('broad', function(data) {
+      
+    })

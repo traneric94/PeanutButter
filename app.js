@@ -41,6 +41,21 @@ app.get('/viewAlt', index.viewAlt);
 //app.post('/add', add.addSong);
 
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app)
+
+var io = require('socket.io').listen(server);
+
+io.on('connection', function(client) {  
+    console.log('Client connected...');
+
+    client.on('join', function(data) {
+        console.log(data);
+        //CALL FUNCTION IN peanutButter.js HERE
+        client.emit('messages', 'This is sent from server to client when client joins');
+    });
+});
+
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
