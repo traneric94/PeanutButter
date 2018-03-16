@@ -37,11 +37,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet"> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>   
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 	<script type="text/javascript" src='/js/peanutButter.js'></script>
@@ -82,45 +83,41 @@
 		  </div>
 	  </div>
 
-		<!--This feature is displayed when someone enters in a search in the search
-				bar that is not found in the Json data-->
-		<!--Recent bar-->
-		<div class="container text">
-			<h3 id="Searching">LIBRARY</h3>
-			<h4 id="searchingDetail"></h4>
+	<!--This feature is displayed when someone enters in a search in the search
+			bar that is not found in the Json data-->
+	<!--Recent bar-->
+	<div class="container text">
+		<h3 id="Searching">LIBRARY</h3>
+		<h4 id="searchingDetail"></h4>
+	</div>
+	<!-- <div class="" style="display: inline;"> -->
+	<!-- Beginning of accordion widgets -->
+	<div class="accordionWidget">
+		<div class="flex-container" id="accordion">
+		{{#each songs}}
+			<div class="panel flex-item"> <!-- Start of element -->
+				<div>
+					<span href="#collapse{{songId}}">
+						<img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}">
+					</span>
+				</div>
+
+				<div class="songInfo" id=collapse{{songId}}>
+					<div class="songInfoPanel">
+						<strong>{{name}} - {{artist}}</strong>
+						<p><strong>Album: {{album}}</strong></p>
+						<ul>
+							<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
+							<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
+							<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
+							<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>  <!-- End of element -->
+		{{/each}}
 		</div>
-		<!-- <div class="" style="display: inline;"> -->
-		<!-- Beginning of accordion widgets -->
-		<div class="accordionWidget">
-		    <div class="panel-group flex-container" id="accordion" style="display:inline;">
-		    	{{#each songs}}
-		        <div class="panel panel-default"> <!-- Start of element -->
-		            <div class="panel-heading">
-		            	<span data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}">
-		            		<h4 class="panel-title">
-		            		<img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}">
-		            		<strong>{{name}} - {{artist}}</strong>
-		                   
-		            		</h4>
-		                </span>
-		            </div>
-		           
-		            <div id=collapse{{songId}} class="panel-collapse collapse">
-		                <div class="panel-body">
-		                	<p><strong>Album: {{album}}</strong></p>
-		  
-		                    <ul>
-								<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
-								<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
-								<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
-								<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
-		              		</ul>
-		                </div>
-		            </div>
-		        </div>  <!-- End of element -->
-		        {{/each}}
-		    </div>
-		</div> <!-- End of accordion widgets -->
+	</div> <!-- End of accordion widgets -->
 
 	<!-- 	<ul class="flex-container">
 			{{#each songs}}

@@ -4,6 +4,12 @@ function searchCleaner(string) {
   return string.toLowerCase().replace(/[<>#!$%^&*(),.\[\]\"@\'\s]/gi, '');
 }
 
+function match(s1, s2) {
+  s1 = searchCleaner(s1);
+  s2 = searchCleaner(s2);
+  return s1.localeCompare(s2) == 0;
+}
+
 //Changes lyric format to html appropriate format (takes all newlines in javascript language and changes them to html language <br> breaks)
 function nl2br(str, is_xhtml) {
   var breakTag =
@@ -58,18 +64,19 @@ $(document).ready(function() {
   $('#submit').click(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    var searchTerm = $('#inputSong').value();
+    var searchTerm = $('#inputSong').val();
     searchTerm = searchCleaner(searchTerm);
     $.getJSON('json/data.json', function(data) {
       // Checks to see if song was found
       for (i = 0; i < data.songs.length; i++) {
-        var compare = searchCleaner(data.songs[i].name);
-        if (searchTerm.localeCompare(compare) == 0) {
-          renderSong(i);
+        var song = data.songs[i];
+        if (match(searchTerm, song.name) || match(searchTerm, song.artist)) {
           $('#notFound').hide();
           $('.navLink').hide();
           $('#searchingDetail').text('');
-          $('#karaokeContent').show();
+          renderSong(i, function() {
+            $('#karaokeContent').show();
+          });
           // $('#Searching').text("Recent Searches");
           return;
         }
@@ -84,6 +91,16 @@ $(document).ready(function() {
   $('<script>')
     .attr('src', 'https://www.youtube.com/iframe_api')
     .appendTo($('head'));
+
+  $('.flex-item').click(function() {
+    $('.flex-item')
+      .not(this)
+      .removeClass('flex-selected');
+    $(this).toggleClass('flex-selected');
+    $(this)
+      .find('.songInfo')
+      .collapse('toggle');
+  });
 });
 
 var player;
@@ -96,6 +113,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function playerCallback(event) {
+  $('#videoPlayer').show();
   //event.target.playVideo();
   // Script for play and pause buttons
 
@@ -118,7 +136,7 @@ function playerCallback(event) {
 }
 
 //Update Script
-function renderSong(songId) {
+function renderSong(songId, callback) {
   $.getJSON('json/data.json', function(data) {
     var song = data.songs[songId];
     var chords = $('<pre>').text(song.chords);
@@ -126,10 +144,9 @@ function renderSong(songId) {
     $('#songInformation').html(nl2br(song.info));
     $('#lyricText').html(nl2br(song.lyrics));
     $('#songImages').attr('src', song.albumArt);
-    $('#videoPlayer').prop(
-      'src',
-      data.songs[songId].videoURL + '?enablejsapi=1'
-    );
+    $('#videoPlayer')
+      .hide()
+      .prop('src', data.songs[songId].videoURL + '?enablejsapi=1');
 
     //Show currently playing elements
     $('.currentlyPlaying').show();
@@ -137,6 +154,8 @@ function renderSong(songId) {
       'Currently Playing: ' + song.name + ' - ' + song.artist
     );
     $('.lyricTitle').text(song.name);
+
+    if (callback) callback();
   });
 }
 
