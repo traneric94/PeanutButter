@@ -94,19 +94,21 @@
 		<div class="accordionWidget">
 		    <div class="panel-group flex-container" id="accordion" style="display:inline;">
 		    	{{#each songs}}
-		        <div class="panel panel-default col-xs-3"> <!-- Start of element -->
+		        <div class="panel panel-default"> <!-- Start of element -->
 		            <div class="panel-heading">
 		            	<span data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}">
 		            		<h4 class="panel-title">
 		            		<img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}">
+		            		<strong>{{name}} - {{artist}}</strong>
+		                   
 		            		</h4>
 		                </span>
 		            </div>
 		           
 		            <div id=collapse{{songId}} class="panel-collapse collapse">
 		                <div class="panel-body">
-		                	<strong>{{name}} - {{artist}}</strong>
-		                    <p><strong>Album: {{album}}</strong></p>
+		                	<p><strong>Album: {{album}}</strong></p>
+		  
 		                    <ul>
 								<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
 								<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
