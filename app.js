@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -6,10 +5,10 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
 
 var index = require('./routes/index');
-var add = require('./routes/add');
+// var add = require('./routes/add');
 
 var app = express();
 
@@ -34,28 +33,28 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-app.get('/viewAlt', index.viewAlt);
 
 // Example route
 // app.get('/users', user.list);
 //app.post('/add', add.addSong);
 
-
-var server = http.createServer(app)
+var server = http.createServer(app);
 
 var io = require('socket.io').listen(server);
 
-io.on('connection', function(client) {  
-    console.log('Client connected...');
+io.on('connection', function(client) {
+  console.log('Client connected...');
 
-    client.on('join', function(data) {
-        console.log(data);
-        //CALL FUNCTION IN peanutButter.js HERE
-        client.emit('messages', 'This is sent from server to client when client joins');
-    });
+  client.on('join', function(data) {
+    client.emit('messages', 'registered');
+  });
+
+  client.on('messages', function(data) {
+    console.log('received', data);
+    client.broadcast.emit('broad', data);
+  });
 });
 
-server.listen(app.get('port'), function(){
+server.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
-

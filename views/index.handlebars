@@ -31,39 +31,38 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-signin-client_id" content="1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com">
+	<!-- <meta name="google-signin-client_id" content="1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com"> -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet"> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>   
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+
+	<script type="text/javascript" src='/js/peanutButter.js'></script>
 	<link rel="stylesheet" href="/css/peanutButter.css">
  
 </head>
 
 <body>
-	
-	<div></div>
-	<!-- Header -->
+		<!-- Header -->
 	<div class="jumbo">
 	  <nav class="container navbar navbar-default banner">
 	  		<!-- <div id="signout" onclick="signOut();" style='float:right;'>Sign out</div> -->
-	        <a class="navbar-brand">
+	        <div class="navbar-brand">
 	        	<img class="img-fluid" id="logo" src="https://imgur.com/G142hN8.png">
-	        </a>
+	        </div>
 			<h2 class="text shadow-text" id="jumboTitle"><strong>Peanut Butter</strong></h2>
 			
-			<span id="signin" class="g-signin2 text" data-onsuccess="onSignIn" style="float:right">Sign in</span>
-			<span><h5 class="text shadow-text" id="jumboDescription" style="float:right; margin-right: 1em;">It's The Jam</h5></span>
+			<!-- <span id="signin" class="g-signin2 text" data-onsuccess="onSignIn" style="float:right">Sign in</span> -->
+			<span><h5 class="text shadow-text" id="jumboDescription">It's The Jam</h5></span>
 	  </nav>
  	</div>
-
-	<!--Login page tab-->
-	<div id="loginPage"></div>
 
 	<div class="navLink container" id='homeContent'>
 		<h3 class="text" id='welcome'></h3>
@@ -86,25 +85,27 @@
 		<!--This feature is displayed when someone enters in a search in the search
 				bar that is not found in the Json data-->
 		<!--Recent bar-->
-	  <div class="container text">
-					<h3 id="Searching">LIBRARY</h3>
-					<h4 id="searchingDetail"></h4>
+		<div class="container text">
+			<h3 id="Searching">LIBRARY</h3>
+			<h4 id="searchingDetail"></h4>
 		</div>
-		<!--Beginning of accordion widgets-->
+		<!-- <div class="" style="display: inline;"> -->
+		<!-- Beginning of accordion widgets -->
 		<div class="accordionWidget">
-		    <div class="panel-group" id="accordion">
+		    <div class="panel-group flex-container" id="accordion" style="display:inline;">
 		    	{{#each songs}}
-		        <div class="panel panel-default"> <!-- Start of element -->
+		        <div class="panel panel-default col-xs-3"> <!-- Start of element -->
 		            <div class="panel-heading">
 		            	<span data-toggle="collapse" data-parent="#accordion" href="#collapse{{songId}}">
-		            	<h4 class="panel-title">
+		            		<h4 class="panel-title">
 		            		<img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}">
-		            		<strong>{{name}} - {{artist}}</strong>
-		                	</span>
-		                </h4>
+		            		</h4>
+		                </span>
 		            </div>
+		           
 		            <div id=collapse{{songId}} class="panel-collapse collapse">
 		                <div class="panel-body">
+		                	<strong>{{name}} - {{artist}}</strong>
 		                    <p><strong>Album: {{album}}</strong></p>
 		                    <ul>
 								<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
@@ -114,92 +115,79 @@
 		              		</ul>
 		                </div>
 		            </div>
-		        </div> <!-- End of element-->
+		        </div>  <!-- End of element -->
 		        {{/each}}
 		    </div>
-		</div> <!--End of accordion widgets-->
+		</div> <!-- End of accordion widgets -->
+
+	<!-- 	<ul class="flex-container">
+			{{#each songs}}
+			<li class="flex-item" style="display:inline;"><img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}" >
+				<div class="container" style="background-color: white; width: 5em">
+				<div >{{name}} - {{artist}}</div>
+		        <p><strong >Album: {{album}}</strong></p>
+		        <ul>
+					<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
+					<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
+					<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
+					<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
+		        </ul>
+			</li>
+			</div>
+			{{/each}}
+		</ul> -->
+
+
+
 	</div> <!--End of homepage-->
 
- 	<div class="navLink container" id='karaokeContent' style="display: none">
+ 	<div class="navLink container" id='karaokeContent' hidden>
 		<h1 class="lyricTitle text">KARAOKE</h1>
 		<div class='video-container'>
-			<iframe id="videoPlayer"
-    			src="https://www.youtube.com/embed/J3_DL0q9oq4?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+			<iframe 
+				id="videoPlayer"
+				src="https://www.youtube.com/embed/J3_DL0q9oq4?enablejsapi=1"
+				frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+			>
     		</iframe>
 		</div>
 	</div>
 
-	<div class="navLink container" id='lyricsContent' style="display: none">
+	<div class="navLink container" id='lyricsContent' hidden>
 		<h1 class="lyricTitle text">LYRICS</h1>
 		<h4 class="text" id="lyricText">No Song Currently Playing</h4>
 	</div>
 
-	<div class="navLink container" id='chordsContent' style="display: none">
+	<div class="navLink container" id='chordsContent' hidden>
 		<h1 class="lyricTitle text">CHORDS</h1>
 		<h4 class="text" id="songChords">No Song Currently Playing</h4>
 	</div>
 
-	<div class="navLink container" id='infoContent' style="display: none">
+	<div class="navLink container" id='infoContent' hidden>
 		<h1 class="lyricTitle text">SONG INFO</h1>
-			<a><img class="picture" id="songImages" style="display: none"></a>
-			<h4 class="text" id="songInformation">No Song Currently Playing</h4>
-	</div>
-
-	<div class="navLink container" id='favoriteContent' style="display: none">
-		<h3>Favorites</h3>
-		<div class="accordionWidget">
-		    <div class="panel-group" id="accordion">
-		        <div class="panel panel-default">
-		            <div class="panel-heading">
-		                <h4 class="panel-title">
-		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-menu-right"></span>Hips Don't Lie - Shakira</a>
-		                </h4>
-		            </div>
-
-		            <div id="collapseFive" class="panel-collapse collapse">
-		                <div class="panel-body">
-		                    <p><strong>Oral Fixation</strong></p>
-		                    <ul>
-								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#karaokeContent">Karaoke</a></li>
-								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#lyricsContent">Lyrics</a></li>
-								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#chordsContent">Chords</a></li>
-								<li><a href="#" class='song' id="Hips Don't Lie" data-element="#infoContent">Song Info</a></li>
-		              		</ul>
-		                </div>
-		            </div>
-		        </div>  <!--End of element-->
-				</div>
-			</div>
+		<h4 class="text" id="songInformation">No Song Currently Playing</h4>
 	</div>
 
 	  <!-- Navigation bar -->
   	<ul class="nav navbar-nav container">
   		<!-- Currently Playing Banner -->
-		<div class='row currentlyPlaying' style="display: none; margin-left: 1em">
+		<div class='row currentlyPlaying' hidden>
 			<h5 class="border-dark text col-xs-6" id="currentlyPlayingText"></h5>
-					<button id='pause-button' class="pull-right btn btn-default glyphicon glyphicon-pause" type="submit"> </button>
-					<button id='play-button' class="pull-right btn btn-default glyphicon glyphicon-play" type="submit"> </button>
+			<button id='pause-button' class="pull-right btn btn-default glyphicon glyphicon-pause" type="submit"> </button>
+			<button id='play-button' class="pull-right btn btn-default glyphicon glyphicon-play" type="submit"> </button>
 		</div>
 
 		<hr style="padding:0; margin:0; border-color:white; width:120%;">
 
-		<div style="padding-top:.5em; padding-bottom: .5em">
-
-    	<a class="navElement" href="#" data-element="#homeContent">Home</a></li>
-    	<a class="navElement" href="#" data-element="#karaokeContent">Karaoke</a></li>
-    	<a class="navElement" href="#" data-element="#lyricsContent">Lyrics</a></li>
-    	<a class="navElement" href="#" data-element="#chordsContent">Chords</a></li>
-    	<a class="navElement" href="#" data-element="#infoContent">Song Info</a></li>
+		<div id="bottomBar">
+    		<a class="navElement" href="#" data-element="#homeContent">Home</a></li>
+    		<a class="navElement" href="#" data-element="#karaokeContent">Karaoke</a></li>
+    		<a class="navElement" href="#" data-element="#lyricsContent">Lyrics</a></li>
+    		<a class="navElement" href="#" data-element="#chordsContent">Chords</a></li>
+    		<a class="navElement" href="#" data-element="#infoContent">Song Info</a></li>
     	</div>
-      <!-- <div class="col-xs-2"<li><a href="#" data-element="#favoriteContent">Favorites</a></li></div> -->
   </ul>
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<script type="text/javascript" src='/js/peanutButter.js'></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-
-
+	<!-- <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script> -->
 </body>
 </html>

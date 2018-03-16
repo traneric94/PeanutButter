@@ -1,11 +1,5 @@
 //Getting json data
-var data = require('../public/apitesting/data.json');
-exports.view = function(req, res){
-	data['viewAlt'] = false;
-	res.render('index', data);
-};
-
-exports.viewAlt = function(req, res){
-	data['viewAlt'] = true;
+var data = require('../public/json/data.json');
+exports.view = function(req, res) {
 	res.render('index', data);
 };

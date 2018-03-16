@@ -5716,7 +5716,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-heading {
-  padding: 10px 15px;
+  padding: 0 !important;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;

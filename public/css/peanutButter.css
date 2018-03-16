@@ -25,6 +25,8 @@ body {
 #jumboDescription {
   text-align: center;
   letter-spacing: 1.5;
+  float:right;
+  margin-right: 1em;
   /*color: #F7D23B !important;*/
 }
 #logo {
@@ -51,6 +53,7 @@ html {
 .currentlyPlaying { 
   background-color: #4C5899 !important;
   margin-left: 0 !important;
+  margin-left: 1em;
 }
 
 .stylish-input-group .form-control{
@@ -79,10 +82,7 @@ html {
   margin-left: 1.3em;
 }
 
-/* Style for accordion wigets */
-.accordionWidget{
-  /*margin: 1em;*/
-}
+
 .rotate{
 -webkit-transform: rotate(90deg);  /* Chrome, Safari, Opera */
   -moz-transform: rotate(90deg);  /* Firefox */
@@ -118,8 +118,8 @@ html {
 }
 
 .albumArt {
-  width: 10%;
-  /*width : 100%;*/
+  /*width: 10%;*/
+  width : 100%;
 
 }
 
@@ -159,8 +159,42 @@ html {
   font-size: 3em;
  }
 
- /*Bootstrap overide*/
-.panel-group .panel+.panel {
-  margin-top: 0;
+
+/* Style for each element */
+@import "compass/css3";
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-wrap:row;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap !important;
+  justify-content: space-around;
 }
+
+.flex-item {
+  padding: 5px;
+  width: 100px;
+  height: 150px;
+  margin-top: 10px;
+  
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+#bottomBar {
+  padding-top:.5em;
+  padding-bottom: .5em;
+}
+
 
