@@ -188,6 +188,7 @@ html {
   text-align: center;
 
   flex: none;
+ 
 }
 
 ul {
@@ -198,18 +199,22 @@ ul {
 .songInfo {
   height: 0%;
   overflow: hidden;
+  
 }
 
 .songInfoPanel {
   padding: 10px;
+    
 }
 
 .flex-selected .songInfo {
   height: inherit;
+    
 }
 
 .flex-selected {
   width: 90%;
+  
 }
 
 #bottomBar {
