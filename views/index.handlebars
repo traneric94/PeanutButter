@@ -2,153 +2,133 @@
 <head>
 	<!-- Google Analytics Content Experiment code -->
 
-	<!-- <script>function utmx_section(){}function utmx(){}(function(){var
-	k='170271774-1',d=document,l=d.location,c=d.cookie;
-	if(l.search.indexOf('utm_expid='+k)>0)return;
-	function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-	indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-	length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-	'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-	'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-	'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-	valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-	</script><script>utmx('url','A/B');</script> -->
+	<script>function utmx_section(){}function utmx(){}(function(){var
+		k='170271774-1',d=document,l=d.location,c=d.cookie;
+		if(l.search.indexOf('utm_expid='+k)>0)return;
+		function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+			indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+				length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+			'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+				'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+			'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+			valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+			'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+	</script><script>utmx('url','A/B');</script>
 
-	<!-- End of Google Analytics Content Experiment code -->
+		<!-- End of Google Analytics Content Experiment code -->
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script> -->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114581555-1"></script>
 
-<!-- 	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag("js", new Date());
-		gtag("config", "UA-114581555-1");
-	</script> -->
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag("js", new Date());
+			gtag("config", "UA-114581555-1");
+		</script>
 
-	<title>Peanut Butter</title>
+		<title>Peanut Butter</title>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <meta name="google-signin-client_id" content="1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com"> -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet"> -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="google-signin-client_id" content="1031753842336-vpo9rpm2evr2o0funsq64v426b29c7r2.apps.googleusercontent.com">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<!-- <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet"> -->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-	<script type="text/javascript" src='/js/peanutButter.js'></script>
-	<link rel="stylesheet" href="/css/peanutButter.css">
- 
-</head>
+		<script type="text/javascript" src='/js/peanutButter.js'></script>
+		<link rel="stylesheet" href="/css/peanutButter.css">
 
-<body>
+	</head>
+
+	<body>
 		<!-- Header -->
-	<div class="jumbo">
-	  <nav class="container navbar navbar-default banner">
-	  		<!-- <div id="signout" onclick="signOut();" style='float:right;'>Sign out</div> -->
-	        <div class="navbar-brand">
-	        	<img class="img-fluid" id="logo" src="https://imgur.com/G142hN8.png">
-	        </div>
-			<h2 class="text shadow-text" id="jumboTitle"><strong>Peanut Butter</strong></h2>
-			
-			<!-- <span id="signin" class="g-signin2 text" data-onsuccess="onSignIn" style="float:right">Sign in</span> -->
-			<span><h5 class="text shadow-text" id="jumboDescription">It's the Jam</h5></span>
-	  </nav>
- 	</div>
-
-	<div class="navLink container" id='homeContent'>
-		<h3 class="text" id='welcome'></h3>
-		<!--Search bar -->
-		<div class="container">
-			<div class="row">
-	        <div class="col-sm-6 col-sm-offset-3">
-	            <form id="imaginary_container">
-	                <div class="input-group stylish-input-group">
-						<input type="text" class="form-control" placeholder="Search for a SONG" name="search" id="inputSong">
-	                    <span class="input-group-addon">
-	                        <button class="glyphicon glyphicon-search" type="submit" id ='submit'> </button>
-	                    </span>
-	                </div>
-	            </form>
-	        </div>
-		  </div>
-	  </div>
-
-	<!--This feature is displayed when someone enters in a search in the search
-			bar that is not found in the Json data-->
-	<!--Recent bar-->
-	<div class="container text">
-		<h3 id="Searching">LIBRARY</h3>
-		<h4 id="searchingDetail"></h4>
-	</div>
-	<!-- <div class="" style="display: inline;"> -->
-	<!-- Beginning of accordion widgets -->
-	<div class="accordionWidget">
-		<div class="flex-container" id="accordion">
-		{{#each songs}}
-			<div class="panel flex-item"> <!-- Start of element -->
-				<div>
-					<span href="#collapse{{songId}}">
-						<img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}">
-					</span>
+		<div class="jumbo">
+			<nav class="container navbar navbar-default banner">
+				<!-- <div id="signout" onclick="signOut();" style='float:right;'>Sign out</div> -->
+				<div class="navbar-brand">
+					<img class="img-fluid" id="logo" src="https://imgur.com/G142hN8.png">
 				</div>
+				<h2 class="text shadow-text" id="jumboTitle"><strong>Peanut Butter</strong></h2>
 
-				<div class="songInfo" id=collapse{{songId}} style="transition: 0s !important;">
-					<div class="songInfoPanel" style="transition: 0s !important;">
-						<strong>{{name}} - {{artist}}</strong>
-						<p><strong>Album: {{album}}</strong></p>
-						<ul>
-							<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
-							<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
-							<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
-							<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
-						</ul>
+				<span id="signin" class="g-signin2 text" data-onsuccess="onSignIn" style="float:right">Sign in</span>
+				<span><h5 class="text shadow-text" id="jumboDescription">It's the Jam</h5></span>
+			</nav>
+		</div>
+
+		<div class="navLink container" id='homeContent'>
+			<h3 class="text" id='welcome'></h3>
+			<!--Search bar -->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3">
+						<form id="imaginary_container">
+							<div class="input-group stylish-input-group">
+								<input type="text" class="form-control" placeholder="Search for a SONG" name="search" id="inputSong">
+								<span class="input-group-addon">
+									<button class="glyphicon glyphicon-search" type="submit" id ='submit'> </button>
+								</span>
+							</div>
+						</form>
 					</div>
 				</div>
-			</div>  <!-- End of element -->
-		{{/each}}
-		</div>
-	</div> <!-- End of accordion widgets -->
-
-	<!-- 	<ul class="flex-container">
-			{{#each songs}}
-			<li class="flex-item" style="display:inline;"><img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}" >
-				<div class="container" style="background-color: white; width: 5em">
-				<div >{{name}} - {{artist}}</div>
-		        <p><strong >Album: {{album}}</strong></p>
-		        <ul>
-					<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
-					<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
-					<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
-					<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
-		        </ul>
-			</li>
 			</div>
-			{{/each}}
-		</ul> -->
 
+	<!--This feature is displayed when someone enters in a search in the search
+		bar that is not found in the Json data-->
+		<!--Recent bar-->
+		<div class="container text">
+			<h3 id="Searching">LIBRARY</h3>
+			<h4 id="searchingDetail"></h4>
+		</div>
+		<!-- <div class="" style="display: inline;"> -->
+			<!-- Beginning of accordion widgets -->
+			<div class="accordionWidget">
+				<div class="flex-container" id="accordion">
+					{{#each songs}}
+					<div class="panel flex-item"> <!-- Start of element -->
+						<div>
+							<span href="#collapse{{songId}}">
+								<img class="albumArt img-rounded" id="albumArt{{songId}}" src="{{albumArt}}">
+							</span>
+						</div>
 
+						<div class="songInfo" id=collapse{{songId}} style="transition: 0s !important;">
+							<div class="songInfoPanel" style="transition: 0s !important;">
+								<strong>{{name}} - {{artist}}</strong>
+								<p><strong>Album: {{album}}</strong></p>
+								<ul>
+									<li><a href="#" class='song' id="{{songId}}" data-element="#karaokeContent">Karaoke</a></li>
+									<li><a href="#" class='song' id="{{songId}}" data-element="#lyricsContent">Lyrics</a></li>
+									<li><a href="#" class='song' id="{{songId}}" data-element="#chordsContent">Chords</a></li>
+									<li><a href="#" class='song' id="{{songId}}" data-element="#infoContent">Song Info</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>  <!-- End of element -->
+					{{/each}}
+				</div>
+			</div> <!-- End of accordion widgets -->
+		</div> <!--End of homepage-->
 
-	</div> <!--End of homepage-->
-
- 	<div class="navLink container" id='karaokeContent' hidden>
-		<h1 class="lyricTitle text">KARAOKE</h1>
-		<div class='video-container'>
-			<iframe 
+		<div class="navLink container" id='karaokeContent' hidden>
+			<h1 class="lyricTitle text">KARAOKE</h1>
+			<div class='video-container'>
+				<iframe 
 				id="videoPlayer"
 				src="https://www.youtube.com/embed/J3_DL0q9oq4?enablejsapi=1"
 				frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-			>
-    		</iframe>
+				>
+			</iframe>
 		</div>
 	</div>
 
@@ -167,9 +147,9 @@
 		<h4 class="text" id="songInformation">No Song Currently Playing</h4>
 	</div>
 
-	  <!-- Navigation bar -->
-  	<ul class="nav navbar-nav container">
-  		<!-- Currently Playing Banner -->
+	<!-- Navigation bar -->
+	<ul class="nav navbar-nav container">
+		<!-- Currently Playing Banner -->
 		<div class='row currentlyPlaying' hidden>
 			<h5 class="border-dark text col-xs-6" id="currentlyPlayingText"></h5>
 			<button id='pause-button' class="pull-right btn btn-default glyphicon glyphicon-pause" type="submit"> </button>
@@ -179,14 +159,14 @@
 		<hr style="padding:0; margin:0; border-color:white; width:120%;">
 
 		<div id="bottomBar">
-    		<a class="navElement" href="#" data-element="#homeContent">Home</a></li>
-    		<a class="navElement" href="#" data-element="#karaokeContent">Karaoke</a></li>
-    		<a class="navElement" href="#" data-element="#lyricsContent">Lyrics</a></li>
-    		<a class="navElement" href="#" data-element="#chordsContent">Chords</a></li>
-    		<a class="navElement" href="#" data-element="#infoContent">Song Info</a></li>
-    	</div>
-  </ul>
+			<a class="navElement" href="#" data-element="#homeContent">Home</a></li>
+			<a class="navElement" href="#" data-element="#karaokeContent">Karaoke</a></li>
+			<a class="navElement" href="#" data-element="#lyricsContent">Lyrics</a></li>
+			<a class="navElement" href="#" data-element="#chordsContent">Chords</a></li>
+			<a class="navElement" href="#" data-element="#infoContent">Song Info</a></li>
+		</div>
+	</ul>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<!-- <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script> -->
+	<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 </body>
 </html>
